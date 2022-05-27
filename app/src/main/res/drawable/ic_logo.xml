@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:width="140dp"
+        android:height="140dp"
+        android:gravity="center">
+        <shape android:shape="oval">
+            <solid android:color="@color/colorPrimary" />
+        </shape>
+    </item>
+    <item
+        android:drawable="@drawable/ic_todo_done_svgrepo_com"
+        android:gravity="center"
+        android:width="75dp"
+        android:height="75dp" />
+</layer-list>
