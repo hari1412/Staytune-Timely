@@ -29,16 +29,13 @@
 ## Screenshots
 <p align='center'>
   <img src='https://firebasestorage.googleapis.com/v0/b/paperscan-8cef2.appspot.com/o/Screenshot_20220527_160400.png?alt=media&token=bccb17e1-e07d-4d30-ab40-0951eefb494b' width='18%'/>
-  <img src='https://i.imgur.com/MI0kCnn.png' width='18%'/>
-  <img src='https://i.imgur.com/DVGatDY.png' width='18%'/>
-  <img src='https://i.imgur.com/kaAMT3k.png' width='18%'/>
-  <img src='https://i.imgur.com/lLj6KS7.png' width='18%'/>
+  <img src='https://firebasestorage.googleapis.com/v0/b/paperscan-8cef2.appspot.com/o/Screenshot_20220527_160429.png?alt=media&token=80092528-4ac3-45dd-bcf4-8850cda0b1fa' width='18%'/>
+  <img src='https://firebasestorage.googleapis.com/v0/b/paperscan-8cef2.appspot.com/o/Screenshot_20220527_160441.png?alt=media&token=f4f0ee36-9626-44f9-8c4b-7e8b875a2303' width='18%'/>
+  <img src='https://firebasestorage.googleapis.com/v0/b/paperscan-8cef2.appspot.com/o/Screenshot_20220527_160456.png?alt=media&token=8a8386cc-dbe0-46c6-91da-ba7b02fa9632' width='18%'/>
+  <img src='https://firebasestorage.googleapis.com/v0/b/paperscan-8cef2.appspot.com/o/Screenshot_20220527_161656.png?alt=media&token=5c86f119-cbcc-4838-9537-d19a270f77bd' width='18%'/>
 
-  <img src='https://i.imgur.com/C6OUdTL.png' width='18%'/>
-  <img src='https://i.imgur.com/iQBLjH5.png' width='18%'/>
-  <img src='https://i.imgur.com/Vm1OOcQ.png' width='18%'/>
-  <img src='https://i.imgur.com/mWEuuSl.png' width='18%'/>
-  <img src='https://i.imgur.com/cVd4xFu.png' width='18%'/>
+  <img src='https://firebasestorage.googleapis.com/v0/b/paperscan-8cef2.appspot.com/o/Screenshot_20220527_161715.png?alt=media&token=53d38105-8f22-4805-ae63-304e4255f52c' width='18%'/>
+  <img src='https://firebasestorage.googleapis.com/v0/b/paperscan-8cef2.appspot.com/o/Screenshot_20220527_161730.png?alt=media&token=f696b3d8-1c98-45d3-be2d-32bbc7447793' width='18%'/>
 </p>
 
 
