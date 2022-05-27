@@ -9,35 +9,16 @@
 
 
 ## Features
-- Notification the day of the event (with selectable time)
-- Additional notification up to 7 days before the event
-- Fetch the existing birthdays from the contacts app, images included!
-- Easily backup and restore your saved events!
-- insert an event manually, just specifying a name, an optional surname, an image and a date (with optional year)
-- Choose your favorite events to see detailed information about them and a countdown for each one
-- Tap on an event to see every possible detail and the available actions
-- The birthdays are also automagically backed up in cloud by Google Play Services when the app is installed from Play Store
-- A set of stats (zodiac, average age and much more) when more than 5 events are inserted, plus an animated counter
-- Easily delete, modify and share the saved events!
-- Each event has a note field
-- Easily hide the top cards to display the list in fullscreen
-- Main list organized by months
-- Quick glance row, to visualize the events in the next 10 days
-- A nice searchbar, to quickly search a person in the saved events
-- Quick apps launcher
-- Light, dark, and system default theme
-- Selectable accent (no app restart needed, 12 choices + system default)
-- Shimmer effect (it can be disabled) and confetti, because why not
-- Name first or surname first choice
-- Notification only for favorite events
-- Hide and show images
-- Dark and light minimal widget
-- Material You guidelines
-- Beautiful animations (and animated notification icon)
-- Multiwindow / freeform full support
-- Animated splashscreen and app intro, dynamic layouts and more
+- Notification the day of the subjects by day (with selectable time)
+- Additional notification.
+- Weekly days available
+- Notification for every lecture
 - Small and optimized apk size
-- Many languages available!
+- Many languages available soon!
+- Login and sign-up via firebase
+- Especially for college and school student
+- Make your own timetable 
+- 
 
 ## Translations (guide and info below)
 
@@ -47,7 +28,7 @@
 
 ## Screenshots
 <p align='center'>
-  <img src='https://i.imgur.com/Zm8HWr6.png' width='18%'/>
+  <img src='https://firebasestorage.googleapis.com/v0/b/paperscan-8cef2.appspot.com/o/Screenshot_20220527_160400.png?alt=media&token=bccb17e1-e07d-4d30-ab40-0951eefb494b' width='18%'/>
   <img src='https://i.imgur.com/MI0kCnn.png' width='18%'/>
   <img src='https://i.imgur.com/DVGatDY.png' width='18%'/>
   <img src='https://i.imgur.com/kaAMT3k.png' width='18%'/>
