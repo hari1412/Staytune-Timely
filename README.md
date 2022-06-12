@@ -43,7 +43,7 @@ The app is available through Google Play soon...
 
 ## Credits and contributions
 
-- [Hari Moradiya] - My idol is elon musk.
+- [Hari Moradiya] - 
 
 This app was written during my free time as a training. Many good devs helped me understanding the best practices and they taught me a lot of useful tricks.Bless Stack Overflow.
 
