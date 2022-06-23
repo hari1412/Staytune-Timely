@@ -48,7 +48,6 @@
     <string name="choose_date">Choose date</string>
     <string name="choose_color">Choose color</string>
     <string name="select">Select</string>
-
     <!-- Assignment Activity strings -->
     <string name="homework">Assignment</string>
     <string name="deadline_dialog">Deadline:</string>

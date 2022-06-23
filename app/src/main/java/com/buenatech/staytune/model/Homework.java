@@ -1,8 +1,6 @@
 package com.buenatech.staytune.model;
 
-/**
- * Created by Ulan on 21.09.2018.
- */
+
 public class Homework {
     private String subject, description, date;
     private int id, color;

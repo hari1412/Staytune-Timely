@@ -54,7 +54,8 @@ public class AddSubjectBottomDialogFragment extends BottomSheetDialogFragment {
             int end = WeekUtils.getMatchingScheduleEnd(timeto, getContext());
             if (start == end) {
                 time.setText(start + ". " + getContext().getString(R.string.lesson));
-            } else {
+            }
+            else {
                 time.setText(start + ".-" + end + ". " + getContext().getString(R.string.lesson));
             }
         }

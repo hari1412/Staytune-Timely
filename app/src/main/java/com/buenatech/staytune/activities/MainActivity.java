@@ -48,26 +48,23 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.pd.chocobar.ChocoBar;
-
 import java.util.Calendar;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private FragmentsTabAdapter adapter;
     private ViewPager viewPager;
     CustomTabLayout tabLayout;
     private static final int showNextDayAfterSpecificHour = 20;
     View view;
     FirebaseAuth mAuth;
-    FirebaseUser currentUser ;
+    FirebaseUser currentUser;
     private static final String TAG = "GoogleSignInActivity";
     private static final int RC_SIGN_IN = 9001;
     private FirebaseAuth.AuthStateListener mAuthListener;
     private GoogleApiClient mGoogleApiClient;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,23 +95,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Calendar c = Calendar.getInstance();
         int timeOfDay = c.get(Calendar.HOUR_OF_DAY);
         if (timeOfDay >= 0 && timeOfDay < 12) {
-            title.setText("Good Morning, "+currentUser.getDisplayName());
+            title.setText("Good Morning, " + currentUser.getDisplayName());
         } else if (timeOfDay >= 12 && timeOfDay < 16) {
-            title.setText("Good Afternoon, "+currentUser.getDisplayName());
+            title.setText("Good Afternoon, " + currentUser.getDisplayName());
 
         } else if (timeOfDay >= 16 && timeOfDay < 21) {
-            title.setText("Good Evening, "+currentUser.getDisplayName());
+            title.setText("Good Evening, " + currentUser.getDisplayName());
         } else if (timeOfDay >= 21 && timeOfDay < 24) {
-            title.setText("Good Night, "+currentUser.getDisplayName());
+            title.setText("Good Night, " + currentUser.getDisplayName());
         }
         TextView desc = headerview.findViewById(R.id.nav_header_main_desc);
         desc.setText(currentUser.getEmail());
 
-        ImageView userImage =headerview.findViewById(R.id.nav_header_main_icon);
-        if (currentUser.getPhotoUrl() != null){
+        ImageView userImage = headerview.findViewById(R.id.nav_header_main_icon);
+        if (currentUser.getPhotoUrl() != null) {
             Glide.with(this).load(currentUser.getPhotoUrl()).into(userImage);
-        }
-        else {
+        } else {
             Glide.with(this).load(R.drawable.avatar).into(userImage);
         }
 
@@ -155,6 +151,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void userData() {
 
     }
+
     private void setupWeeksTV() {
         TextView weekView = findViewById(R.id.main_week_tV);
         if (PreferenceUtil.isTwoWeeksEnabled(this)) {
@@ -247,7 +244,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void setupCustomDialog() {
-
 
         final View alertLayout = getLayoutInflater().inflate(R.layout.dialog_add_subject, null);
         AlertDialogsHelper.getAddSubjectDialog(new DbHelper(this), MainActivity.this, alertLayout, adapter, viewPager);

@@ -526,7 +526,6 @@ public class AlertDialogsHelper {
         Button submit = alertLayout.findViewById(R.id.save);
         alert.setView(alertLayout);
         final AlertDialog dialog = alert.create();
-
         //Preselection
         FloatingActionButton fab = activity.findViewById(R.id.fab);
         fab.setOnClickListener(view -> {

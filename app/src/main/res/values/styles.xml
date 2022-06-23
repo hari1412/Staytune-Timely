@@ -13,6 +13,7 @@
         <item name="android:textColorPrimary">@color/color_on_surface</item>
         <item name="android:textColorSecondary">@color/color_secondary_text</item>
         <item name="bottomSheetDialogTheme">@style/CustomBottomSheetDialog</item>
+        <item name="android:dialogCornerRadius">@dimen/nav_header_vertical_spacing</item>
 
     </style>
     <style name="AppTheme.Splash" parent="AppTheme.Light">

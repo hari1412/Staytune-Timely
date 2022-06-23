@@ -1,8 +1,6 @@
 package com.buenatech.staytune.model;
 
-/**
- * Created by Ulan on 07.10.2018.
- */
+
 public class Teacher {
     private String name, post, phonenumber, email;
     private int id, color;

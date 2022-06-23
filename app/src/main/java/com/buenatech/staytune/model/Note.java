@@ -3,9 +3,7 @@ package com.buenatech.staytune.model;
 
 import java.io.Serializable;
 
-/**
- * Created by Ulan on 28.09.2018.
- */
+
 public class Note implements Serializable {
     private String title, text = "";
     private int id, color;
