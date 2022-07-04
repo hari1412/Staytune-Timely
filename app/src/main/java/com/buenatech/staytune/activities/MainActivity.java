@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private TextView dateTimeDisplay;
     private SimpleDateFormat dateFormat;
     private String date;
-    PrefHelper prefHelper;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,11 +80,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        prefHelper = new PrefHelper();
-        if (prefHelper.getFirstStart(this).equals("")) {
-            Intent intent = new Intent(this, MainIntroActivity.class);
-            startActivityForResult(intent, REQUEST_CODE_INTRO);
-        }
         initAll();
         userData();
 
