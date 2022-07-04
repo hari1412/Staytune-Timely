@@ -12,8 +12,8 @@
 - Weekly days available
 - Notification for every lecture
 - Small and optimized apk size
-- Many languages available soon!
-- Login and sign-up via firebase
+- Many languages available soon!(optional)
+- Login and sign-up via firebase(optional)
 - Especially for college and school student
 - Make your own timetable 
 - Looking forward to language contribution
