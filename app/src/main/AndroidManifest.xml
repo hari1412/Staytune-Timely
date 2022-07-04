@@ -39,6 +39,9 @@
         <activity android:name=".signinproviders.EmailAndPasswordLoginActivity" />
         <activity android:name=".signinproviders.EmailAndPasswordRegisterActivity" />
         <activity android:name=".signinproviders.GoogleSignInActivity" />
+        <activity
+            android:name=".activities.AboutActivity"
+            android:screenOrientation="portrait" />
 
 
         <receiver
