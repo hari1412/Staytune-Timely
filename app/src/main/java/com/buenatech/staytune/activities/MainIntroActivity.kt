@@ -7,8 +7,13 @@ import com.heinrichreimersoftware.materialintro.slide.SimpleSlide
 
 
 class MainIntroActivity : IntroActivity() {
+    var prefHelper: PrefHelper? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        prefHelper = PrefHelper()
+
+        prefHelper!!.setFirstStart(this, "started")
 
 
         addIntroScreen(

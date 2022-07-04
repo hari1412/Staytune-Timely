@@ -32,6 +32,7 @@ import com.buenatech.staytune.receivers.DoNotDisturbReceiversKt;
 import com.buenatech.staytune.signinproviders.BaseActivity;
 import com.buenatech.staytune.signinproviders.EmailAndPasswordLoginActivity;
 import com.buenatech.staytune.utils.AlertDialogsHelper;
+import com.buenatech.staytune.utils.CubeOutPageTransformer;
 import com.buenatech.staytune.utils.CustomTabLayout;
 import com.buenatech.staytune.utils.DbHelper;
 import com.buenatech.staytune.utils.NotificationUtil;
@@ -58,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private FragmentsTabAdapter adapter;
     private ViewPager viewPager;
     CustomTabLayout tabLayout;
-    private static final int showNextDayAfterSpecificHour = 20;
+    private static final int showNextDayAfterSpecificHour = 24;
     View view;
     FirebaseAuth mAuth;
     FirebaseUser currentUser;
@@ -71,6 +72,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private TextView dateTimeDisplay;
     private SimpleDateFormat dateFormat;
     private String date;
+    PrefHelper prefHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,17 +80,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
-        boolean firstStart = PreferenceManager.getDefaultSharedPreferences(this)
-                .getBoolean(PREF_KEY_FIRST_START, true);
-
-        if (firstStart) {
+        prefHelper = new PrefHelper();
+        if (prefHelper.getFirstStart(this).equals("")) {
             Intent intent = new Intent(this, MainIntroActivity.class);
             startActivityForResult(intent, REQUEST_CODE_INTRO);
         }
-        mAuth = FirebaseAuth.getInstance();
-        currentUser = mAuth.getCurrentUser();
         initAll();
         userData();
 
@@ -164,6 +160,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private void setupFragments() {
         adapter = new FragmentsTabAdapter(getSupportFragmentManager());
         viewPager = findViewById(R.id.viewPager);
+        viewPager.setPageTransformer(true, new CubeOutPageTransformer());
         tabLayout = findViewById(R.id.tabLayout);
 
         WeekdayFragment mondayFragment = new WeekdayFragment(WeekdayFragment.KEY_MONDAY_FRAGMENT);
@@ -273,7 +270,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Intent teacher = new Intent(MainActivity.this, SummaryActivity.class);
             startActivity(teacher);
         } else if (itemId == R.id.about) {
-            aboutDialog();
+            Intent about = new Intent(MainActivity.this, AboutActivity.class);
+            startActivity(about);
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
