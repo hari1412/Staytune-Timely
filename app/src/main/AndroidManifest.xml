@@ -40,6 +40,7 @@
         <activity android:name=".signinproviders.EmailAndPasswordRegisterActivity" />
         <activity android:name=".signinproviders.GoogleSignInActivity" />
 
+
         <receiver
             android:name=".receivers.NotificationDismissButtonReceiver"
             android:enabled="true" />
