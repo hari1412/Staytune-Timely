@@ -43,6 +43,7 @@
             android:name=".activities.AboutActivity"
             android:screenOrientation="portrait" />
 
+
         <receiver
             android:name=".receivers.NotificationDismissButtonReceiver"
             android:enabled="true" />

@@ -23,4 +23,8 @@ public class PrefHelper {
         return prefs.getString("firststart", "");
     }
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> master

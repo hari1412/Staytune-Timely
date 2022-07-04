@@ -12,8 +12,8 @@
 - Weekly days available
 - Notification for every lecture
 - Small and optimized apk size
-- Many languages available soon!
-- Login and sign-up via firebase
+- Many languages available soon!(optional)
+- Login and sign-up via firebase(optional)
 - Especially for college and school student
 - Make your own timetable 
 - Looking forward to language contribution
@@ -43,7 +43,8 @@ The app is available through Google Play soon...
 
 ## Credits and contributions
 
-- [Hari Moradiya] - 
+- [Hari Moradiya](https://github.com/hari1412)
+- [Gaurang Dhameliya](https://github.com/GaurangHD)
 
 This app was written during my free time as a training. Many good devs helped me understanding the best practices and they taught me a lot of useful tricks.Bless Stack Overflow.
 

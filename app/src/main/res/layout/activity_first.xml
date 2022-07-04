@@ -27,6 +27,7 @@
         android:layout_height="300dp"
         android:contentDescription="@string/app_name"
         android:src="@drawable/welcome"
+        android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/groww_title" />
@@ -39,6 +40,7 @@
         android:fontFamily="@font/open_sans_semibold"
         android:gravity="center"
         android:text="Join now"
+        android:visibility="gone"
         android:textColor="@color/black"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -55,19 +57,21 @@
         android:background="@drawable/sign_up_ripple"
         android:fontFamily="@font/open_sans_semibold"
         android:onClick="gotosignuppage"
-        android:text="@string/sign_up_using_email_and_password"
+        android:text="Welcome"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="14sp"
+        android:layout_marginBottom="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/invest" />
+        app:layout_constraintBottom_toBottomOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/sign_in_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
+        android:visibility="gone"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="40dp"
         android:background="@drawable/sign_in_ripple"
