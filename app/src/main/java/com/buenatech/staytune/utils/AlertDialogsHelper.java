@@ -789,6 +789,7 @@ public class AlertDialogsHelper {
                             }
 
                         })
+
                         .negativeText(R.string.no)
                         .show();
             }

@@ -102,7 +102,6 @@
     <string name="notification_notification_end_setting_desc">Send a silent notification at the end of the subject to inform you about your next subject.</string>
     <string name="notification_settings">Notification</string>
     <string name="notification_dismiss">Hide</string>
-
     <string name="permission_request_message">A few permissions are required for this function. To ensure comprehensive functionality, please grant them.</string>
     <string name="permission_required">Authorization is required!</string>
     <string name="permission_required_description">These authorization (s) are required to ensure comprehensive functionality</string>
@@ -127,7 +126,7 @@
     <string name="notes_activity_title">Notes</string>
     <string name="exams_activity_title">Exams</string>
     <string name="notification_summary_title">Today\'s Lecture:</string>
-    <string name="notification_next_week_title">Next Lecture</string>
+    <string name="notification_next_week_title">Your Lecture</string>
     <string name="nav_drawer_description">Forked from ulan17</string>
     <string name="time_from">from</string>
 

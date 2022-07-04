@@ -153,7 +153,7 @@ public class NotificationUtil {
 
             NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "id")
                     .setStyle(style)
-                    .setSmallIcon(R.drawable.icon)
+                    .setSmallIcon(R.drawable.ic_baseline_circle_notifications_24)
                     .setColor(color);
 
 

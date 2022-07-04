@@ -54,7 +54,6 @@ public class WeekUtils {
         String now = hour + ":" + minutes;
 
         for (int i = 0; i < weeks.size(); i++) {
-
             Week week = weeks.get(i);
             if ((now.compareToIgnoreCase(week.getFromTime()) >= 0 && now.compareToIgnoreCase(week.getToTime()) <= 0) || now.compareToIgnoreCase(week.getToTime()) <= 0) {
                 return week;
@@ -84,11 +83,17 @@ public class WeekUtils {
     @NonNull
     private static ArrayList<Week> getWeeks(@NonNull DbHelper dbHelper, @NonNull String[] keys, Calendar calendar) {
         ArrayList<Week> weeks = new ArrayList<>();
+
+
         for (String key : keys) {
+
             weeks.addAll(dbHelper.getWeek(key, calendar));
         }
+
+
         return weeks;
     }
+
 
     @NotNull
     public static ArrayList<Week> getPreselection(@NonNull AppCompatActivity activity) {
@@ -192,7 +197,6 @@ public class WeekUtils {
         weekCalendarStart.set(Calendar.HOUR_OF_DAY, startHour);
         int startMinute = Integer.parseInt(w.getFromTime().substring(w.getFromTime().indexOf(":") + 1));
         weekCalendarStart.set(Calendar.MINUTE, startMinute);
-
         Calendar weekCalendarEnd = Calendar.getInstance();
         int endHour = Integer.parseInt(w.getToTime().substring(0, w.getToTime().indexOf(":")));
         weekCalendarEnd.set(Calendar.HOUR_OF_DAY, endHour);

@@ -1,5 +1,8 @@
 package com.buenatech.staytune.signinproviders;
 
+import static com.buenatech.staytune.activities.MainActivity.PREF_KEY_FIRST_START;
+import static com.buenatech.staytune.activities.MainActivity.REQUEST_CODE_INTRO;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.preference.PreferenceManager;
@@ -33,8 +36,7 @@ public class FirstActivity extends AppCompatActivity {
     private static final String TAG = "GoogleSignInActivity";
     FirebaseAuth mAuth;
     FirebaseUser currentUser;
-    public static final String PREF_KEY_FIRST_START = "PREF_KEY_FIRST_START";
-    public static final int REQUEST_CODE_INTRO = 1;
+
     RelativeLayout googles;
     private GoogleApiClient googleApiClient;
     private static final int RC_SIGN_IN = 1;
@@ -45,13 +47,7 @@ public class FirstActivity extends AppCompatActivity {
         setContentView(R.layout.activity_first);
 
 
-        boolean firstStart = PreferenceManager.getDefaultSharedPreferences(this)
-                .getBoolean(PREF_KEY_FIRST_START, true);
 
-        if (firstStart) {
-            Intent intent = new Intent(this, MainIntroActivity.class);
-            startActivityForResult(intent, REQUEST_CODE_INTRO);
-        }
 
         // ini
         mAuth = FirebaseAuth.getInstance();

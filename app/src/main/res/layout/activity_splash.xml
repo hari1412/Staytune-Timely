@@ -1,31 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:theme="@style/Theme.AppCompat">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/tasks"
-        android:layout_centerInParent="true" />
-
-    <TextView
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:src="@drawable/ic_bird_svgrepo_com"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+    <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"
+        android:text="Timely"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="50dp"
-        android:text="Staytune : Reminder"
-        android:textColor="@color/colorPrimary"
-        style="@style/Staytune.TextAppearance.BottomSheet.Title"
-        />
+        android:textSize="25sp"
+        android:textStyle="bold"/>
 
-
-
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

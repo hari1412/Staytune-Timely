@@ -16,9 +16,14 @@
         <item name="android:dialogCornerRadius">@dimen/nav_header_vertical_spacing</item>
 
     </style>
+
     <style name="AppTheme.Splash" parent="AppTheme.Light">
-        <item name="android:windowBackground">@drawable/splash_screen</item>
-        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">false</item>
     </style>
     <style name="Staytune.TextAppearance.List.Title.Strong" parent="Staytune.TextAppearance.Body">
         <item name="android:textStyle">bold</item>

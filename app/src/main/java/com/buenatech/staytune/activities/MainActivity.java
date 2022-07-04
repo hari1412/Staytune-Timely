@@ -1,5 +1,4 @@
 package com.buenatech.staytune.activities;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -48,6 +47,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -65,12 +66,27 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private static final int RC_SIGN_IN = 9001;
     private FirebaseAuth.AuthStateListener mAuthListener;
     private GoogleApiClient mGoogleApiClient;
+    public static final int REQUEST_CODE_INTRO = 1;
+    public static final String PREF_KEY_FIRST_START = "PREF_KEY_FIRST_START";
+    private TextView dateTimeDisplay;
+    private SimpleDateFormat dateFormat;
+    private String date;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setTheme(PreferenceUtil.getGeneralThemeNoActionBar(this));
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+
+        boolean firstStart = PreferenceManager.getDefaultSharedPreferences(this)
+                .getBoolean(PREF_KEY_FIRST_START, true);
+
+        if (firstStart) {
+            Intent intent = new Intent(this, MainIntroActivity.class);
+            startActivityForResult(intent, REQUEST_CODE_INTRO);
+        }
         mAuth = FirebaseAuth.getInstance();
         currentUser = mAuth.getCurrentUser();
         initAll();
@@ -79,8 +95,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void initAll() {
-
-
         view = findViewById(R.id.fab);
         NotificationUtil.sendNotificationCurrentLesson(this, false);
         PreferenceUtil.setDoNotDisturb(this, PreferenceUtil.doNotDisturbDontAskAgain(this));
@@ -95,25 +109,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Calendar c = Calendar.getInstance();
         int timeOfDay = c.get(Calendar.HOUR_OF_DAY);
         if (timeOfDay >= 0 && timeOfDay < 12) {
-            title.setText("Good Morning, " + currentUser.getDisplayName());
+            title.setText("Good Morning");
         } else if (timeOfDay >= 12 && timeOfDay < 16) {
-            title.setText("Good Afternoon, " + currentUser.getDisplayName());
+            title.setText("Good Afternoon");
 
         } else if (timeOfDay >= 16 && timeOfDay < 21) {
-            title.setText("Good Evening, " + currentUser.getDisplayName());
+            title.setText("Good Evening");
         } else if (timeOfDay >= 21 && timeOfDay < 24) {
-            title.setText("Good Night, " + currentUser.getDisplayName());
+            title.setText("Good Night");
         }
-        TextView desc = headerview.findViewById(R.id.nav_header_main_desc);
-        desc.setText(currentUser.getEmail());
-
-        ImageView userImage = headerview.findViewById(R.id.nav_header_main_icon);
-        if (currentUser.getPhotoUrl() != null) {
-            Glide.with(this).load(currentUser.getPhotoUrl()).into(userImage);
-        } else {
-            Glide.with(this).load(R.drawable.avatar).into(userImage);
-        }
-
 
         PreferenceManager.setDefaultValues(this, R.xml.settings, false);
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -124,18 +128,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close) {
             @Override
             public void onDrawerSlide(View drawerView, float slideOffset) {
-
-                //this code-block is the real player behind this beautiful ui
-                // basically, it's a mathemetical calculation which handles the shrinking of
-                // our content view.
-
                 float scaleFactor = 7f;
                 float slideX = drawerView.getWidth() * slideOffset;
-
                 holder.setTranslationX(slideX);
                 holder.setScaleX(1 - (slideOffset / scaleFactor));
                 holder.setScaleY(1 - (slideOffset / scaleFactor));
-
                 super.onDrawerSlide(drawerView, slideOffset);
             }
         };
@@ -277,20 +274,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             startActivity(teacher);
         } else if (itemId == R.id.about) {
             aboutDialog();
-        } else if (itemId == R.id.logout) {
-            logout();
         }
+
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
-    private void logout() {
-        FirebaseAuth.getInstance().signOut();
-        Intent intent = new Intent(getApplicationContext(), EmailAndPasswordLoginActivity.class);
-        startActivity(intent);
-        finish();
-    }
+
 
     public void aboutDialog() {
         LayoutInflater layoutInflaterAndroid = LayoutInflater.from(MainActivity.this);
