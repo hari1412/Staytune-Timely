@@ -209,6 +209,10 @@
     <string name="no_class">No subjects</string>
     <string name="confirm">Confirm</string>
 
+
+    <string name="intro_title">Repeat Introduction</string>
+    <string name="intro_title_desc">Introduction screen for review.</string>
+
     <string name="time_settings">Time settings</string>
     <string name="time_settings_desc">Settings about the start of your collage and the length of your lecture.</string>
     <string name="ok">OK</string>

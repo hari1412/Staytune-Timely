@@ -13,6 +13,12 @@
         android:summary="@string/time_settings_desc"
         android:title="@string/time_settings" />
 
+    <Preference
+        android:icon="@drawable/ic_access_time_black_24dp"
+        android:key="intro_repeat"
+        android:summary="@string/intro_title_desc"
+        android:title="@string/intro_title" />
+
     <SwitchPreferenceCompat
         android:defaultValue="true"
         android:icon="@drawable/ic_do_not_disturb_on_black_24dp"
