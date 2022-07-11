@@ -32,6 +32,7 @@ import com.buenatech.staytune.receivers.DoNotDisturbReceiversKt;
 import com.buenatech.staytune.signinproviders.BaseActivity;
 import com.buenatech.staytune.signinproviders.EmailAndPasswordLoginActivity;
 import com.buenatech.staytune.utils.AlertDialogsHelper;
+import com.buenatech.staytune.utils.CubeOutPageTransformer;
 import com.buenatech.staytune.utils.CustomTabLayout;
 import com.buenatech.staytune.utils.DbHelper;
 import com.buenatech.staytune.utils.NotificationUtil;
@@ -58,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private FragmentsTabAdapter adapter;
     private ViewPager viewPager;
     CustomTabLayout tabLayout;
-    private static final int showNextDayAfterSpecificHour = 20;
+    private static final int showNextDayAfterSpecificHour = 24;
     View view;
     FirebaseAuth mAuth;
     FirebaseUser currentUser;
@@ -125,7 +126,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (timeOfDay >= 21 && timeOfDay < 24) {
             title.setText("Good Night");
         }
-
         PreferenceManager.setDefaultValues(this, R.xml.settings, false);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -171,6 +171,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private void setupFragments() {
         adapter = new FragmentsTabAdapter(getSupportFragmentManager());
         viewPager = findViewById(R.id.viewPager);
+        viewPager.setPageTransformer(true, new CubeOutPageTransformer());
         tabLayout = findViewById(R.id.tabLayout);
 
         WeekdayFragment mondayFragment = new WeekdayFragment(WeekdayFragment.KEY_MONDAY_FRAGMENT);
@@ -280,7 +281,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Intent teacher = new Intent(MainActivity.this, SummaryActivity.class);
             startActivity(teacher);
         } else if (itemId == R.id.about) {
-            aboutDialog();
+            Intent about = new Intent(MainActivity.this, AboutActivity.class);
+            startActivity(about);
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
