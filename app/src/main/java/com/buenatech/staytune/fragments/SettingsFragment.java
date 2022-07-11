@@ -15,6 +15,7 @@ import androidx.preference.PreferenceManager;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.buenatech.staytune.R;
 
+import com.buenatech.staytune.activities.MainIntroActivity;
 import com.buenatech.staytune.activities.TimeSettingsActivity;
 import com.buenatech.staytune.profiles.ProfileManagement;
 import com.buenatech.staytune.utils.PreferenceUtil;
@@ -53,6 +54,13 @@ public class SettingsFragment extends PreferenceFragmentCompat {
         myPref = findPreference("time_settings");
         Objects.requireNonNull(myPref).setOnPreferenceClickListener(p -> {
             startActivity(new Intent(getActivity(), TimeSettingsActivity.class));
+            return true;
+        });
+
+
+        myPref = findPreference("intro_repeat");
+        Objects.requireNonNull(myPref).setOnPreferenceClickListener(p -> {
+            startActivity(new Intent(getActivity(), MainIntroActivity.class));
             return true;
         });
 
