@@ -126,7 +126,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (timeOfDay >= 21 && timeOfDay < 24) {
             title.setText("Good Night");
         }
-
         PreferenceManager.setDefaultValues(this, R.xml.settings, false);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

@@ -17,11 +17,6 @@ class MainIntroActivity : IntroActivity() {
         prefHelper = PrefHelper()
 
         prefHelper!!.setFirstStart(this, "started")
-
-
-
-
-
         addIntroScreen(
             getString(R.string.intro_1_title), getString(R.string.intro_1_description),
             R.drawable.intro4
@@ -38,7 +33,6 @@ class MainIntroActivity : IntroActivity() {
             getString(R.string.intro_4_title), getString(R.string.intro_4_description),
             R.drawable.disturb
         )
-
 
 
     }
