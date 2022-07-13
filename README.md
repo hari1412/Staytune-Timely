@@ -38,7 +38,11 @@
 
 
 ## Download
-The app is available through Google Play soon...
+The app is available through Google Play\
+\
+[<img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png"
+     alt="Get it on Google Play"
+     height="80">](https://play.google.com/store/apps/details?id=com.buenatech.staytune)
 
 
 ## Credits and contributions
