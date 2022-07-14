@@ -44,7 +44,7 @@
 - [Hari Moradiya](https://github.com/hari1412)
 - [Gaurang Dhameliya](https://github.com/GaurangHD)
 
-This app was written during my free time as a training. Many good devs helped me understanding the best practices and they taught me a lot of useful tricks.Bless Stack Overflow.
+This app was written during my free time as a training. Many good devs helped me understanding the best practices and they taught me a lot of useful tricks.Bless Stack Overflow , Ulan.
 
 
 
