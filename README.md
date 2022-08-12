@@ -39,7 +39,7 @@
 ## Download
 The app is available through Google Play Soon.. \
 \
-[<img src="https://is4-ssl.mzstatic.com/image/thumb/Purple112/v4/fd/e0/45/fde0453d-b235-5838-b88e-22b0909ff66e/AppIcon-0-1x_U007emarketing-0-0-0-6-0-0-0-85-220.png/1200x630wa.png"
+[<img src="https://zeevector.com/wp-content/uploads/Google-Drive-Logo-Transparent.png"
      alt="Get it on G-Drive"
      height="80">](https://drive.google.com/file/d/1Zk8qr-ZfyQ11rBlg7-yKApjzIPWnyxle/view?usp=sharing)
 
