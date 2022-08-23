@@ -57,6 +57,13 @@ public class SettingsFragment extends PreferenceFragmentCompat {
             return true;
         });
 
+
+        myPref = findPreference("intro_repeat");
+        Objects.requireNonNull(myPref).setOnPreferenceClickListener(p -> {
+            startActivity(new Intent(getActivity(), MainIntroActivity.class));
+            return true;
+        });
+
         //showPreselectionElements();
 //        myPref = findPreference("is_preselection");
 //        Objects.requireNonNull(myPref).setOnPreferenceClickListener(p -> {

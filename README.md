@@ -12,8 +12,8 @@
 - Weekly days available
 - Notification for every lecture
 - Small and optimized apk size
-- Many languages available soon!
-- Login and sign-up via firebase
+- Many languages available soon!(optional)
+- Login and sign-up via firebase(optional)
 - Especially for college and school student
 - Make your own timetable 
 - Looking forward to language contribution
@@ -36,16 +36,21 @@
   <img src='https://firebasestorage.googleapis.com/v0/b/paperscan-8cef2.appspot.com/o/Screenshot_20220527_161730.png?alt=media&token=f696b3d8-1c98-45d3-be2d-32bbc7447793' width='18%'/>
 </p>
 
-
 ## Download
-The app is available through Google Play soon...
+The app is available through Google Play Soon.. \
+\
+[<img src="https://zeevector.com/wp-content/uploads/Google-Drive-Logo-Transparent.png"
+     alt="Get it on G-Drive"
+     height="80">](https://drive.google.com/file/d/1Zk8qr-ZfyQ11rBlg7-yKApjzIPWnyxle/view?usp=sharing)
+
 
 
 ## Credits and contributions
 
-- [Hari Moradiya] - 
+- [Hari Moradiya](https://github.com/hari1412)
+- [Gaurang Dhameliya](https://github.com/GaurangHD)
 
-This app was written during my free time as a training. Many good devs helped me understanding the best practices and they taught me a lot of useful tricks.Bless Stack Overflow.
+This app was written during my free time as a training. Many good devs helped me understanding the best practices and they taught me a lot of useful tricks.Bless Stack Overflow , Ulan.
 
 
 
