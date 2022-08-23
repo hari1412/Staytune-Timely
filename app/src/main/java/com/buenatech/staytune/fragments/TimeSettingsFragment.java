@@ -84,6 +84,7 @@ public class TimeSettingsFragment extends PreferenceFragmentCompat {
                 cal.set(Calendar.MONTH, month);
                 cal.set(Calendar.DAY_OF_MONTH, dayOfMonth);
 
+
                 p.setTitle(getString(R.string.start_of_term) + " (" + WeekUtils.localizeDate(requireContext(), new Date(cal.getTimeInMillis())) + ")");
             }, mYear2, mMonth2, mDayofMonth2);
 

@@ -18,9 +18,7 @@ import com.buenatech.staytune.model.Week;
 import java.util.ArrayList;
 import java.util.Objects;
 
-/**
- * Created by Ulan on 03.12.2018.
- */
+
 public class FragmentHelper {
 
     @NonNull
@@ -28,9 +26,9 @@ public class FragmentHelper {
         return new AbsListView.MultiChoiceModeListener() {
             @Override
             public void onItemCheckedStateChanged(@NonNull ActionMode mode, int position, long id, boolean checked) {
-                final int checkedCount  = listView.getCheckedItemCount();
-                mode.setTitle(checkedCount  + " " + activity.getResources().getString(R.string.selected));
-                if(checkedCount == 0) mode.finish();
+                final int checkedCount = listView.getCheckedItemCount();
+                mode.setTitle(checkedCount + " " + activity.getResources().getString(R.string.selected));
+                if (checkedCount == 0) mode.finish();
             }
 
             @Override

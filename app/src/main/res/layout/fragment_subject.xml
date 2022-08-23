@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true">
+
+    <include
+        android:id="@+id/appBarLayout"
+        layout="@layout/layout_appbar_subject" />
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/contentView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/activity_padding">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/codeTextInputLayout"
+                style="@style/Staytune.Widget.TextInput.Layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_padding"
+                android:hint="@string/field_subject_code"
+                app:errorEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/codeTextInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapWords"
+                    android:textAppearance="@style/Staytune.TextAppearance.Editor.Title">
+
+                    <requestFocus />
+
+                </com.google.android.material.textfield.TextInputEditText>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/activity_padding"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/shape_card_background"
+                android:orientation="vertical"
+                android:paddingVertical="@dimen/editor_container_padding">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="16dp"
+                    android:text="@string/field_description"
+                    android:textAppearance="@style/Staytune.TextAppearance.Editor.Hint" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/descriptionTextInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/editor_item_height"
+                    android:layout_marginHorizontal="@dimen/editor_container_padding"
+                    android:hint="@string/hint_subject_description"
+                    android:inputType="textCapWords"
+                    android:textAppearance="@style/Staytune.TextAppearance.Editor.Value" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/activity_padding"
+                android:layout_marginVertical="8dp"
+                android:animateLayoutChanges="true"
+                android:background="@drawable/shape_card_background"
+                android:orientation="vertical"
+                android:visibility="visible"
+                android:paddingVertical="@dimen/editor_container_padding">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="16dp"
+                    android:text="@string/teacher"
+                    android:textAppearance="@style/Staytune.TextAppearance.Editor.Hint" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/teacher_dialog"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/editor_item_height"
+                    android:layout_marginHorizontal="@dimen/editor_container_padding"
+                    android:hint="@string/hint_teacher_description"
+                    android:inputType="textCapWords"
+                    android:textAppearance="@style/Staytune.TextAppearance.Editor.Value" />
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/activity_padding"
+                android:animateLayoutChanges="true"
+                android:orientation="vertical"
+                android:paddingVertical="@dimen/editor_container_padding">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Staytune.Widget.TextInput.Layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/field_room_code"
+                    app:errorEnabled="true">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/room_dialog"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/Staytune.TextAppearance.Editor.Title">
+
+                        <requestFocus />
+
+                    </com.google.android.material.textfield.TextInputEditText>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/activity_padding"
+                android:layout_marginVertical="8dp"
+                android:background="@drawable/shape_card_background"
+                android:orientation="vertical"
+                android:paddingVertical="@dimen/editor_container_padding">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="16dp"
+                    android:text="@string/field_color"
+                    android:textAppearance="@style/Staytune.TextAppearance.Editor.Hint" />
+
+                <TextView
+                    android:id="@+id/tagView"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/listPreferredItemHeightSmall"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:drawablePadding="16dp"
+                    android:focusable="true"
+                    android:gravity="center_vertical"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:text="@string/color_sky"
+                    android:textAppearance="@style/Staytune.TextAppearance.Editor.Value"
+                    android:textColor="@color/black"
+                    app:drawableStartCompat="@drawable/shape_color_holder" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/actionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/activity_padding"
+        android:text="@string/button_save"
+        android:textColor="@color/white"
+        app:iconTint="@color/white"
+        app:icon="@drawable/ic_hero_check_24"
+        android:backgroundTint="@color/colorPrimary"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

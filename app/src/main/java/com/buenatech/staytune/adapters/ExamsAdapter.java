@@ -1,6 +1,5 @@
 package com.buenatech.staytune.adapters;
 
-import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.util.SparseBooleanArray;
@@ -34,9 +33,6 @@ import com.buenatech.staytune.utils.WeekUtils;
 import java.util.ArrayList;
 import java.util.Objects;
 
-/**
- * Created by Ulan on 17.12.2018.
- */
 public class ExamsAdapter extends ArrayAdapter<Exam> {
 
     @NonNull
@@ -107,8 +103,6 @@ public class ExamsAdapter extends ArrayAdapter<Exam> {
         ImageViewCompat.setImageTintList(convertView.findViewById(R.id.timeimage), ColorStateList.valueOf(textColor));
         ImageViewCompat.setImageTintList(convertView.findViewById(R.id.popupbtn), ColorStateList.valueOf(textColor));
         convertView.findViewById(R.id.line).setBackgroundColor(textColor);
-
-
         holder.subject.setText(exam.getSubject());
         holder.teacher.setText(exam.getTeacher());
         //holder.teacher.setOnClickListener((View v) -> mActivity.startActivity(new Intent(mActivity, TeachersActivity.class)));
@@ -180,6 +174,8 @@ public class ExamsAdapter extends ArrayAdapter<Exam> {
             for (int i = 0; i < checkedItems.size(); i++) {
                 int key = checkedItems.keyAt(i);
                 if (checkedItems.get(key)) {
+                    holder.cardView.setVisibility(View.GONE);
+                    holder.room.setVisibility(View.GONE);
                     holder.popup.setVisibility(View.INVISIBLE);
                 }
             }

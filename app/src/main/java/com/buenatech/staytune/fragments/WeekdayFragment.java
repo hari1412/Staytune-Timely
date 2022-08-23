@@ -22,6 +22,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -50,13 +53,14 @@ public class WeekdayFragment extends Fragment {
     @Nullable
     private DbHelper db;
     private ListView listView;
-    private TextView empty_view;
+    private LinearLayout empty_view;
 
     @Nullable
     private WeekAdapter adapter;
     private View view;
 
     private final String key;
+    private Animation animation;
 
     public WeekdayFragment(String key) {
         super();
@@ -86,13 +90,10 @@ public class WeekdayFragment extends Fragment {
         db = new DbHelper(getActivity());
         listView = view.findViewById(R.id.daylist);
         empty_view = view.findViewById(R.id.empty_view);
-
         ArrayList<Week> weeks = db.getWeek(key);
         adapter = new WeekAdapter(db, (AppCompatActivity) requireActivity(), listView, 0, weeks);
         listView.setEmptyView(empty_view);
         listView.setAdapter(adapter);
-
-
     }
 
     private void setupListViewMultiSelect() {

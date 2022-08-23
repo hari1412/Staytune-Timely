@@ -2,10 +2,13 @@ package com.buenatech.staytune.model;
 
 
 public class Homework {
+
     private String subject, description, date;
     private int id, color;
 
-    public Homework() {}
+    public Homework() {
+    }
+
 
     public Homework(String subject, String description, String date, int color) {
         this.subject = subject;
@@ -13,6 +16,8 @@ public class Homework {
         this.date = date;
         this.color = color;
     }
+
+
     public String getSubject() {
         return subject;
     }
@@ -52,4 +57,6 @@ public class Homework {
     public void setColor(int color) {
         this.color = color;
     }
+
+
 }

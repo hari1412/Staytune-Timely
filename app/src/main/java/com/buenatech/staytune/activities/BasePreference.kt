@@ -9,5 +9,4 @@ abstract class BasePreference : PreferenceFragmentCompat() {
         findPreference<Preference>(key)?.summary = summary
     }
 
-
 }

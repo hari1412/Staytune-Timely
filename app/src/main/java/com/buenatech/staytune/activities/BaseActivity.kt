@@ -12,12 +12,17 @@ abstract class BaseActivity : AppCompatActivity() {
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreate(savedInstanceState: Bundle?) {
+
+
         window.sharedElementsUseOverlay = false
         super.onCreate(savedInstanceState)
+
+
     }
 
 
     private var toolbar: MaterialToolbar? = null
+
 
     protected fun setPersistentActionBar(toolbar: MaterialToolbar?) {
         this.toolbar = toolbar

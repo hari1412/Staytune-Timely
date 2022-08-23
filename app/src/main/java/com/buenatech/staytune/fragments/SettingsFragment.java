@@ -71,6 +71,12 @@ public class SettingsFragment extends PreferenceFragmentCompat {
 //            return true;
 //        });
 
+        myPref = findPreference("intro_repeat");
+        Objects.requireNonNull(myPref).setOnPreferenceClickListener(p -> {
+            startActivity(new Intent(getActivity(), MainIntroActivity.class));
+            return true;
+        });
+
 //        myPref = findPreference("preselection_elements");
 //        Objects.requireNonNull(myPref).setOnPreferenceClickListener(p -> {
 //            ArrayList<String> preselectedValues = new ArrayList<>(Arrays.asList(requireContext().getResources().getStringArray(R.array.preselected_subjects_values)));
@@ -117,22 +123,22 @@ public class SettingsFragment extends PreferenceFragmentCompat {
 //        });
     }
 
-//    private String getThemeName() {
-//        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(requireContext());
-//
-//        String selectedTheme = sharedPreferences.getString("theme", "switch");
-//        String[] values = getResources().getStringArray(R.array.theme_array_values);
-//
-//        String[] names = getResources().getStringArray(R.array.theme_array);
-//
-//        for (int i = 0; i < values.length; i++) {
-//            if (values[i].equalsIgnoreCase(selectedTheme)) {
-//                return names[i];
-//            }
-//        }
-//
-//        return "";
-//    }
+    private String getThemeName() {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(requireContext());
+
+        String selectedTheme = sharedPreferences.getString("theme", "switch");
+        String[] values = getResources().getStringArray(R.array.theme_array_values);
+
+        String[] names = getResources().getStringArray(R.array.theme_array);
+
+        for (int i = 0; i < values.length; i++) {
+            if (values[i].equalsIgnoreCase(selectedTheme)) {
+                return names[i];
+            }
+        }
+
+        return "";
+    }
 
     private void setTurnOff() {
         boolean show = PreferenceUtil.isAutomaticDoNotDisturb(requireContext()) && ProfileManagement.isPreferredProfile();

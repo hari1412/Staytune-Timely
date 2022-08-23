@@ -10,9 +10,6 @@ import android.widget.EditText;
 
 import androidx.annotation.NonNull;import com.buenatech.staytune.utils.PreferenceUtil;
 
-/**
- * Created by Ulan on 28.09.2018.
- */
 @SuppressLint("AppCompatCustomView")
 public class LinedEditText extends EditText {
     @NonNull

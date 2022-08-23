@@ -2,21 +2,26 @@ package com.buenatech.staytune.activities
 
 import android.os.Bundle
 import com.buenatech.staytune.R
+import com.buenatech.staytune.utils.PrefHelper
 import com.heinrichreimersoftware.materialintro.app.IntroActivity
 import com.heinrichreimersoftware.materialintro.slide.SimpleSlide
 
 
 class MainIntroActivity : IntroActivity() {
 
-
     var prefHelper: PrefHelper? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        prefHelper = PrefHelper()
+        prefHelper = PrefHelper(this)
 
         prefHelper!!.setFirstStart(this, "started")
+
+
+
+
         addIntroScreen(
             getString(R.string.intro_1_title), getString(R.string.intro_1_description),
             R.drawable.intro4
@@ -32,7 +37,9 @@ class MainIntroActivity : IntroActivity() {
         addIntroScreen(
             getString(R.string.intro_4_title), getString(R.string.intro_4_description),
             R.drawable.disturb
+
         )
+
 
 
     }

@@ -1,5 +1,6 @@
 package com.buenatech.staytune.utils;
 
+import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.ActivityNotFoundException;
@@ -64,10 +65,6 @@ import java.util.Map;
 import me.jfenn.colorpickerdialog.dialogs.ColorPickerDialog;
 import me.jfenn.colorpickerdialog.views.picker.RGBPickerView;
 
-
-/**
- * Created by Ulan on 22.10.2018.
- */
 public class AlertDialogsHelper {
     //TODO: Rewrite Dialogs to and returning a dialog object, without activity
 
@@ -85,7 +82,7 @@ public class AlertDialogsHelper {
         final TextView to_hour = alertLayout.findViewById(R.id.to_hour);
         final AppCompatButton select_color = alertLayout.findViewById(R.id.select_color);
         // final AppCompatImageView select_color  = alertLayout.findViewById(R.id.tagView);
-        select_color.setTextColor(ColorPalette.pickTextColorBasedOnBgColorSimple(week.getColor(), Color.WHITE, Color.BLACK));
+        //select_color.setTextColor(ColorPalette.pickTextColorBasedOnBgColorSimple(week.getColor(), Color.WHITE, Color.BLACK));
         subject.setText(week.getSubject());
         teacher.setText(week.getTeacher());
         room.setText(week.getRoom());
@@ -299,12 +296,15 @@ public class AlertDialogsHelper {
         });
     }
 
+    @SuppressLint("ResourceAsColor")
     public static void getAddSubjectDialog(DbHelper dbHelper, @NonNull final AppCompatActivity activity, @NonNull final View alertLayout, @NonNull final FragmentsTabAdapter adapter, @NonNull final ViewPager viewPager) {
         final HashMap<Integer, EditText> editTextHashs = new HashMap<>();
         final EditText subject = alertLayout.findViewById(R.id.subject_dialog);
         subject.requestFocus();
         editTextHashs.put(R.string.subject, subject);
         final EditText teacher = alertLayout.findViewById(R.id.teacher_dialog);
+        final AppCompatButton select_color = alertLayout.findViewById(R.id.select_color);
+        select_color.setTextColor(R.color.black);
 //        editTextHashs.put(R.string.teacher, teacher);
         final EditText room = alertLayout.findViewById(R.id.room_dialog);
 //        editTextHashs.put(R.string.room, room);
@@ -322,7 +322,8 @@ public class AlertDialogsHelper {
         final TextView from_hour = alertLayout.findViewById(R.id.from_hour);
         from_hour.setLayoutParams(params);
         final TextView to_hour = alertLayout.findViewById(R.id.to_hour);
-        final AppCompatButton sel = alertLayout.findViewById(R.id.select_color);
+
+
         to_hour.setLayoutParams(params);
 
         if (PreferenceUtil.showTimes(activity)) {
@@ -340,7 +341,6 @@ public class AlertDialogsHelper {
         from_hour.setText(R.string.select_start_time);
         to_hour.setText(R.string.select_end_time);
 
-        final AppCompatButton select_color = alertLayout.findViewById(R.id.select_color);
 
         final Week week = new Week();
 
@@ -471,7 +471,7 @@ public class AlertDialogsHelper {
                 .withListener((dialog, color) -> {
                     // a color has been picked; use it
                     select_color.setBackgroundColor(color);
-                    select_color.setTextColor(ColorPalette.pickTextColorBasedOnBgColorSimple(color, Color.WHITE, Color.BLACK));
+                   // select_color.setTextColor(ColorPalette.pickTextColorBasedOnBgColorSimple(color, Color.WHITE, Color.BLACK));
                 })
                 .clearPickers()
                 .withPresets(ColorPalette.PRIMARY_COLORS)
@@ -518,10 +518,10 @@ public class AlertDialogsHelper {
                 }
             }
         });
-
         final AlertDialog.Builder alert = new AlertDialog.Builder(activity);
         alert.setTitle(R.string.add_subject);
         alert.setCancelable(false);
+        select_color.setTextColor(R.color.black);
         Button cancel = alertLayout.findViewById(R.id.cancel);
         Button submit = alertLayout.findViewById(R.id.save);
         alert.setView(alertLayout);
@@ -1687,7 +1687,7 @@ public class AlertDialogsHelper {
     public static void getDeleteDialog(@NonNull Context context, @NonNull Runnable runnable, String deleteSubject) {
         new MaterialDialog.Builder(context)
                 .title(context.getString(R.string.are_you_sure))
-                .content(context.getString(R.string.delete_content, deleteSubject))
+                .content(context.getString(R.string.delete_content))
                 .positiveText(context.getString(R.string.yes))
                 .onPositive((dialog, which) -> {
                     runnable.run();

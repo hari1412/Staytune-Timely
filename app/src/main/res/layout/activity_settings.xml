@@ -16,19 +16,21 @@
   ~     along with GymWenApp.  If not, see <https://www.gnu.org/licenses/>.
   -->
 
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?colorPrimary"
-        app:title="Settings"
-        app:titleTextColor="@color/white"
-        app:popupTheme="?attr/popupMenuStyle" />
+        app:popupTheme="?attr/popupMenuStyle"
+        app:title="@string/settings"
+        app:titleTextColor="@color/white" />
 
     <FrameLayout
         android:id="@+id/settings"

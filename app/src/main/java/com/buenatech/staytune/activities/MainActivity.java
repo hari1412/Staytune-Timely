@@ -1,14 +1,11 @@
 package com.buenatech.staytune.activities;
-import android.content.Context;
+
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,29 +20,31 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.preference.PreferenceManager;
 import androidx.viewpager.widget.ViewPager;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.buenatech.staytune.BuildConfig;
 import com.buenatech.staytune.R;
 import com.buenatech.staytune.adapters.FragmentsTabAdapter;
 import com.buenatech.staytune.fragments.WeekdayFragment;
-import com.buenatech.staytune.profiles.ProfileManagement;
 import com.buenatech.staytune.receivers.DoNotDisturbReceiversKt;
-import com.buenatech.staytune.signinproviders.BaseActivity;
-import com.buenatech.staytune.signinproviders.EmailAndPasswordLoginActivity;
 import com.buenatech.staytune.utils.AlertDialogsHelper;
 import com.buenatech.staytune.utils.CubeOutPageTransformer;
 import com.buenatech.staytune.utils.CustomTabLayout;
 import com.buenatech.staytune.utils.DbHelper;
 import com.buenatech.staytune.utils.NotificationUtil;
+import com.buenatech.staytune.utils.PrefHelper;
 import com.buenatech.staytune.utils.PreferenceUtil;
 import com.bumptech.glide.Glide;
-import com.google.android.gms.auth.api.Auth;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
+import com.google.android.play.core.review.ReviewInfo;
+import com.google.android.play.core.review.ReviewManager;
+import com.google.android.play.core.review.ReviewManagerFactory;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -65,7 +64,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     FirebaseUser currentUser;
     private static final String TAG = "GoogleSignInActivity";
     private static final int RC_SIGN_IN = 9001;
-    private FirebaseAuth.AuthStateListener mAuthListener;
     private GoogleApiClient mGoogleApiClient;
     public static final int REQUEST_CODE_INTRO = 1;
     public static final String PREF_KEY_FIRST_START = "PREF_KEY_FIRST_START";
@@ -73,37 +71,49 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private SimpleDateFormat dateFormat;
     private String date;
     PrefHelper prefHelper;
+    FirebaseAuth firebaseAuth;
+    GoogleSignInClient googleSignInClient;
+    FirebaseUser firebaseUser;
+    FloatingActionButton floatingActionButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setTheme(PreferenceUtil.getGeneralThemeNoActionBar(this));
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseUser = firebaseAuth.getCurrentUser();
+        prefHelper = new PrefHelper(this);
+        // Initialize sign in client
+        googleSignInClient = GoogleSignIn.getClient(MainActivity.this
+                , GoogleSignInOptions.DEFAULT_SIGN_IN);
 
-        prefHelper = new PrefHelper();
+//        if (prefHelper.getFirstStart(this).equals("")) {
+//            Intent intent = new Intent(this, MainIntroActivity.class);
+//            startActivityForResult(intent, REQUEST_CODE_INTRO);
+//        }
+        // Initialize firebase auth
+        // Check condition
 
 
-
-//        boolean firstStart = PreferenceManager.getDefaultSharedPreferences(this)
-//                .getBoolean(PREF_KEY_FIRST_START, true);
-
-
-
-
-
-        if (prefHelper.getFirstStart(this).equals("")) {
-            Intent intent = new Intent(this, MainIntroActivity.class);
-            startActivityForResult(intent, REQUEST_CODE_INTRO);
-        }
-        mAuth = FirebaseAuth.getInstance();
-        currentUser = mAuth.getCurrentUser();
         initAll();
+        inAppReview();
         userData();
 
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        googleSignInClient = GoogleSignIn.getClient(MainActivity.this
+                , GoogleSignInOptions.DEFAULT_SIGN_IN);
     }
 
     private void initAll() {
         view = findViewById(R.id.fab);
+        // Initialize firebase user
         NotificationUtil.sendNotificationCurrentLesson(this, false);
         PreferenceUtil.setDoNotDisturb(this, PreferenceUtil.doNotDisturbDontAskAgain(this));
         setupWeeksTV();
@@ -112,20 +122,30 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         View headerview = navigationView.getHeaderView(0);
         headerview.findViewById(R.id.nav_header_main_settings).setOnClickListener((View v) -> startActivity(new Intent(this, SettingsActivity.class)));
         TextView title = headerview.findViewById(R.id.nav_header_main_title);
+        CircleImageView ivImage = headerview.findViewById(R.id.nav_header_main_icon);
         //TextView userEmail  = headerview.findViewById(R.id.nav_header_main_desc);
         LinearLayout holder = findViewById(R.id.holder);
         Calendar c = Calendar.getInstance();
         int timeOfDay = c.get(Calendar.HOUR_OF_DAY);
         if (timeOfDay >= 0 && timeOfDay < 12) {
-            title.setText("Good Morning");
+            title.setText("Good Morning, " + firebaseUser.getDisplayName());
         } else if (timeOfDay >= 12 && timeOfDay < 16) {
-            title.setText("Good Afternoon");
+            title.setText("Good Afternoon, " + firebaseUser.getDisplayName());
 
         } else if (timeOfDay >= 16 && timeOfDay < 21) {
-            title.setText("Good Evening");
+            title.setText("Good Evening, " + firebaseUser.getDisplayName());
         } else if (timeOfDay >= 21 && timeOfDay < 24) {
-            title.setText("Good Night");
+            title.setText("Good Night, " + firebaseUser.getDisplayName());
         }
+
+        if (firebaseUser != null) {
+            // When firebase user is not equal to null
+            // Set image on image view
+            Glide.with(MainActivity.this)
+                    .load(firebaseUser.getPhotoUrl())
+                    .into(ivImage);
+        }
+
         PreferenceManager.setDefaultValues(this, R.xml.settings, false);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -146,7 +166,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
+
         setupFragments();
+
 
         setupCustomDialog();
 
@@ -171,7 +193,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private void setupFragments() {
         adapter = new FragmentsTabAdapter(getSupportFragmentManager());
         viewPager = findViewById(R.id.viewPager);
-        viewPager.setPageTransformer(true, new CubeOutPageTransformer());
+//        viewPager.setPageTransformer(true, new CubeOutPageTransformer());
         tabLayout = findViewById(R.id.tabLayout);
 
         WeekdayFragment mondayFragment = new WeekdayFragment(WeekdayFragment.KEY_MONDAY_FRAGMENT);
@@ -218,7 +240,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             viewPager.setCurrentItem(day == 1 ? 6 : day - 2, true);
         }
         tabLayout.setViewPager(viewPager);
-//        tabLayout.setupWithViewPager(viewPager);
+
     }
 
     private int getFragmentChoosingDay() {
@@ -248,10 +270,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return day;
     }
 
+
     private void setupCustomDialog() {
 
         final View alertLayout = getLayoutInflater().inflate(R.layout.dialog_add_subject, null);
         AlertDialogsHelper.getAddSubjectDialog(new DbHelper(this), MainActivity.this, alertLayout, adapter, viewPager);
+
+
     }
 
 
@@ -261,7 +286,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         }
-        //   ProfileManagement.resetSelectedProfile();
         finishAffinity();
     }
 
@@ -283,13 +307,37 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (itemId == R.id.about) {
             Intent about = new Intent(MainActivity.this, AboutActivity.class);
             startActivity(about);
+        } else if (itemId == R.id.logout) {
+            new MaterialDialog.Builder(this)
+                    .title(this.getString(R.string.are_you_sure))
+                    .content(this.getString(R.string.logout_content, firebaseUser.getDisplayName()))
+                    .positiveText(this.getString(R.string.yes))
+                    .onPositive((dialog, which) -> {
+                        googleSignInClient.signOut().addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                // Check condition
+                                if (task.isSuccessful()) {
+                                    firebaseAuth.signOut();
+                                    // Display Toast
+                                    Toast.makeText(getApplicationContext(), "Logout successful", Toast.LENGTH_SHORT).show();
+                                    // Finish activity
+                                    finish();
+                                }
+                            }
+                        });
+                        dialog.dismiss();
+                    })
+                    .onNegative((dialog, which) -> dialog.dismiss())
+                    .negativeText(this.getString(R.string.no))
+                    .show();
+
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
 
 
     public void aboutDialog() {
@@ -303,5 +351,31 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         alert.setView(view);
         alert.setPositiveButton(R.string.dialog_option_ok, (dialog, which) -> dialog.dismiss());
         alert.show();
+    }
+
+
+    private void inAppReview() {
+        if (prefHelper.getInAppReviewToken() < 1) {
+            prefHelper.updateInAppReviewToken(prefHelper.getInAppReviewToken() + 1);
+            Log.d(TAG, "in app update token");
+            Log.e(TAG, "token updated");
+        } else {
+            ReviewManager manager = ReviewManagerFactory.create(this);
+            com.google.android.play.core.tasks.Task<ReviewInfo> request = manager.requestReviewFlow();
+            request.addOnCompleteListener(task -> {
+                if (task.isSuccessful()) {
+                    ReviewInfo reviewInfo = task.getResult();
+                    manager.launchReviewFlow(MainActivity.this, reviewInfo).addOnFailureListener(e -> {
+                    }).addOnCompleteListener(complete -> {
+                                Log.d(TAG, "Success");
+                            }
+                    ).addOnFailureListener(failure -> {
+                        Log.d(TAG, "Rating Failed");
+                    });
+                }
+            }).addOnFailureListener(failure -> Log.d(TAG, "In-App Request Failed " + failure));
+            Log.d(TAG, "in app token complete, show in app review if available");
+        }
+        Log.d(TAG, "in app review token : " + prefHelper.getInAppReviewToken());
     }
 }

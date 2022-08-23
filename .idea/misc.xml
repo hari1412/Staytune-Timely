@@ -12,11 +12,29 @@
         <entry key="..\:/#l/2022/Staytune/app/src/main/res/drawable/card_background_selector.xml" value="0.36666666666666664" />
         <entry key="..\:/#l/2022/Staytune/app/src/main/res/drawable/darker_surface.xml" value="0.36666666666666664" />
         <entry key="..\:/#l/2022/Staytune/app/src/main/res/drawable/google_icon.xml" value="0.1796875" />
+        <entry key="..\:/#l/2022/Staytune/app/src/main/res/drawable/ic__hari.xml" value="0.225" />
         <entry key="..\:/#l/2022/Staytune/app/src/main/res/drawable/ic_assignment_black_24dp.xml" value="0.36666666666666664" />
+        <entry key="..\:/#l/2022/Staytune/app/src/main/res/drawable/ic_avatar.xml" value="0.225" />
+        <entry key="..\:/#l/2022/Staytune/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.225" />
         <entry key="..\:/#l/2022/Staytune/app/src/main/res/drawable/ic_baseline_check_24.xml" value="0.158" />
         <entry key="..\:/#l/2022/Staytune/app/src/main/res/drawable/ic_baseline_circle_notifications_24.xml" value="0.229" />
-        <entry key="..\:/#l/2022/Staytune/app/src/main/res/drawable/ic_bird_svgrepo_com.xml" value="0.225" />
+        <entry key="..\:/#l/2022/Staytune/app/src/main/res/drawable/ic_baseline_copyright_24.xml" value="0.225" />
+        <entry key="..\:/#l/2022/Staytune/app/src/main/res/drawable/ic_baseline_do_not_disturb_24.xml" value="0.225" />
+        <entry key="..\:/#l/2022/Staytune/app/src/main/res/drawable/ic_baseline_feedback_24.xml" value="0.225" />
+        <entry key="..\:/#l/2022/Staytune/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.225" />
+        <entry key="..\:/#l/2022/Staytune/app/src/main/res/drawable/ic_baseline_rate_review_24.xml" value="0.225" />
+        <entry key="..\:/#l/2022/Staytune/app/src/main/res/drawable/ic_baseline_replay_circle_filled_24.xml" value="0.2475" />
+        <entry key="..\:/#l/2022/Staytune/app/src/main/res/drawable/ic_baseline_star_rate_24.xml" value="0.225" />
+        <entry key="..\:/#l/2022/Staytune/app/src/main/res/drawable/ic_bird_svgrepo_com.xml" value="0.18" />
+        <entry key="..\:/#l/2022/Staytune/app/src/main/res/drawable/ic_bird_svgrepo_com__1_.xml" value="0.249" />
+        <entry key="..\:/#l/2022/Staytune/app/src/main/res/drawable/ic_do_not_disturb_on_black_24dp.xml" value="0.3095" />
+        <entry key="..\:/#l/2022/Staytune/app/src/main/res/drawable/ic_expand_more_black_24dp.xml" value="0.2665" />
+        <entry key="..\:/#l/2022/Staytune/app/src/main/res/drawable/ic_hero_bell_24.xml" value="0.302" />
+        <entry key="..\:/#l/2022/Staytune/app/src/main/res/drawable/ic_hero_code_24.xml" value="0.302" />
         <entry key="..\:/#l/2022/Staytune/app/src/main/res/drawable/ic_hero_cog_24.xml" value="0.36666666666666664" />
+        <entry key="..\:/#l/2022/Staytune/app/src/main/res/drawable/ic_hero_share_24.xml" value="0.225" />
+        <entry key="..\:/#l/2022/Staytune/app/src/main/res/drawable/ic_hero_x_24.xml" value="0.284" />
+        <entry key="..\:/#l/2022/Staytune/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.225" />
         <entry key="..\:/#l/2022/Staytune/app/src/main/res/drawable/ic_logo.xml" value="0.13333333333333333" />
         <entry key="..\:/#l/2022/Staytune/app/src/main/res/drawable/ic_mediamodifier_design__1_.xml" value="0.158" />
         <entry key="..\:/#l/2022/Staytune/app/src/main/res/drawable/ic_settings_black_24dp.xml" value="0.36666666666666664" />
@@ -28,7 +46,7 @@
         <entry key="..\:/#l/2022/Staytune/app/src/main/res/drawable/launch_screen.xml" value="0.2109375" />
         <entry key="..\:/#l/2022/Staytune/app/src/main/res/drawable/round_button.xml" value="0.36666666666666664" />
         <entry key="..\:/#l/2022/Staytune/app/src/main/res/drawable/shape_card_background.xml" value="0.36666666666666664" />
-        <entry key="..\:/#l/2022/Staytune/app/src/main/res/drawable/shape_color_holder.xml" value="0.36666666666666664" />
+        <entry key="..\:/#l/2022/Staytune/app/src/main/res/drawable/shape_color_holder.xml" value="0.22" />
         <entry key="..\:/#l/2022/Staytune/app/src/main/res/drawable/shape_handle.xml" value="0.36666666666666664" />
         <entry key="..\:/#l/2022/Staytune/app/src/main/res/drawable/side_nav_bar.xml" value="0.1796875" />
         <entry key="..\:/#l/2022/Staytune/app/src/main/res/drawable/sign_in_button.xml" value="0.1796875" />
@@ -37,53 +55,52 @@
         <entry key="..\:/#l/2022/Staytune/app/src/main/res/drawable/sign_up_ripple.xml" value="0.1796875" />
         <entry key="..\:/#l/2022/Staytune/app/src/main/res/drawable/splash_screen.xml" value="0.158" />
         <entry key="..\:/#l/2022/Staytune/app/src/main/res/font/open_sans.xml" value="0.19375" />
-        <entry key="..\:/#l/2022/Staytune/app/src/main/res/layout/activity_email_and_password_login.xml" value="0.14666666666666667" />
-        <entry key="..\:/#l/2022/Staytune/app/src/main/res/layout/activity_email_and_password_register.xml" value="0.16666666666666666" />
-        <entry key="..\:/#l/2022/Staytune/app/src/main/res/layout/activity_first.xml" value="0.33" />
-        <entry key="..\:/#l/2022/Staytune/app/src/main/res/layout/activity_google.xml" value="0.16354166666666667" />
-        <entry key="..\:/#l/2022/Staytune/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/#l/2022/Staytune/app/src/main/res/layout/activity_main_intro.xml" value="0.35052083333333334" />
+        <entry key="..\:/#l/2022/Staytune/app/src/main/res/font/open_sans_extrabold.xml" value="0.3807291666666667" />
+        <entry key="..\:/#l/2022/Staytune/app/src/main/res/layout/activity_about.xml" value="0.35052083333333334" />
+        <entry key="..\:/#l/2022/Staytune/app/src/main/res/layout/activity_email_and_password_login.xml" value="0.5" />
+        <entry key="..\:/#l/2022/Staytune/app/src/main/res/layout/activity_email_and_password_register.xml" value="0.5" />
+        <entry key="..\:/#l/2022/Staytune/app/src/main/res/layout/activity_first.xml" value="0.25" />
+        <entry key="..\:/#l/2022/Staytune/app/src/main/res/layout/activity_google.xml" value="0.5" />
+        <entry key="..\:/#l/2022/Staytune/app/src/main/res/layout/activity_main.xml" value="0.5233281493001555" />
+        <entry key="..\:/#l/2022/Staytune/app/src/main/res/layout/activity_main_intro.xml" value="0.25" />
         <entry key="..\:/#l/2022/Staytune/app/src/main/res/layout/activity_settings.xml" value="0.35052083333333334" />
         <entry key="..\:/#l/2022/Staytune/app/src/main/res/layout/activity_settings_time.xml" value="0.35052083333333334" />
-        <entry key="..\:/#l/2022/Staytune/app/src/main/res/layout/activity_splash.xml" value="0.33" />
+        <entry key="..\:/#l/2022/Staytune/app/src/main/res/layout/activity_splash.xml" value="0.67" />
         <entry key="..\:/#l/2022/Staytune/app/src/main/res/layout/activity_summary.xml" value="0.35052083333333334" />
-        <entry key="..\:/#l/2022/Staytune/app/src/main/res/layout/app_bar_main.xml" value="0.16666666666666666" />
-        <entry key="..\:/#l/2022/Staytune/app/src/main/res/layout/content_main.xml" value="0.16666666666666666" />
+        <entry key="..\:/#l/2022/Staytune/app/src/main/res/layout/app_bar_main.xml" value="0.25" />
+        <entry key="..\:/#l/2022/Staytune/app/src/main/res/layout/content_main.xml" value="0.25" />
         <entry key="..\:/#l/2022/Staytune/app/src/main/res/layout/day_appwidget.xml" value="0.19479166666666667" />
-        <entry key="..\:/#l/2022/Staytune/app/src/main/res/layout/dialog_about.xml" value="0.35052083333333334" />
+        <entry key="..\:/#l/2022/Staytune/app/src/main/res/layout/dialog_about.xml" value="1.0" />
         <entry key="..\:/#l/2022/Staytune/app/src/main/res/layout/dialog_add_exam.xml" value="0.35052083333333334" />
-        <entry key="..\:/#l/2022/Staytune/app/src/main/res/layout/dialog_add_homework.xml" value="0.35052083333333334" />
-        <entry key="..\:/#l/2022/Staytune/app/src/main/res/layout/dialog_add_subject.xml" value="0.33" />
-        <entry key="..\:/#l/2022/Staytune/app/src/main/res/layout/fragment_weekday.xml" value="0.14666666666666667" />
+        <entry key="..\:/#l/2022/Staytune/app/src/main/res/layout/dialog_add_homework.xml" value="0.5" />
+        <entry key="..\:/#l/2022/Staytune/app/src/main/res/layout/dialog_add_note.xml" value="0.35052083333333334" />
+        <entry key="..\:/#l/2022/Staytune/app/src/main/res/layout/dialog_add_subject.xml" value="0.25" />
+        <entry key="..\:/#l/2022/Staytune/app/src/main/res/layout/dialog_add_teacher.xml" value="0.35052083333333334" />
+        <entry key="..\:/#l/2022/Staytune/app/src/main/res/layout/fragment_subject.xml" value="0.35052083333333334" />
+        <entry key="..\:/#l/2022/Staytune/app/src/main/res/layout/fragment_weekday.xml" value="0.3013698630136986" />
+        <entry key="..\:/#l/2022/Staytune/app/src/main/res/layout/layout_appbar.xml" value="0.35052083333333334" />
+        <entry key="..\:/#l/2022/Staytune/app/src/main/res/layout/layout_appbar_subject.xml" value="0.35052083333333334" />
         <entry key="..\:/#l/2022/Staytune/app/src/main/res/layout/layout_item_menu.xml" value="0.35052083333333334" />
-        <entry key="..\:/#l/2022/Staytune/app/src/main/res/layout/layout_item_schedule.xml" value="0.5" />
+        <entry key="..\:/#l/2022/Staytune/app/src/main/res/layout/layout_item_schedule.xml" value="0.67" />
         <entry key="..\:/#l/2022/Staytune/app/src/main/res/layout/layout_item_subject.xml" value="0.35052083333333334" />
         <entry key="..\:/#l/2022/Staytune/app/src/main/res/layout/layout_sheet_options.xml" value="0.35052083333333334" />
         <entry key="..\:/#l/2022/Staytune/app/src/main/res/layout/listview_exams_adapter.xml" value="0.5" />
-        <entry key="..\:/#l/2022/Staytune/app/src/main/res/layout/listview_notes_adapter.xml" value="0.35052083333333334" />
-        <entry key="..\:/#l/2022/Staytune/app/src/main/res/layout/listview_week_adapter.xml" value="0.33" />
-        <entry key="..\:/#l/2022/Staytune/app/src/main/res/layout/nav_header_main.xml" value="0.25" />
+        <entry key="..\:/#l/2022/Staytune/app/src/main/res/layout/listview_homeworks_adapter.xml" value="0.35052083333333334" />
+        <entry key="..\:/#l/2022/Staytune/app/src/main/res/layout/listview_notes_adapter.xml" value="0.33" />
+        <entry key="..\:/#l/2022/Staytune/app/src/main/res/layout/listview_week_adapter.xml" value="0.75" />
+        <entry key="..\:/#l/2022/Staytune/app/src/main/res/layout/nav_header_main.xml" value="0.5" />
         <entry key="..\:/#l/2022/Staytune/app/src/main/res/menu/activity_main_drawer.xml" value="0.5" />
         <entry key="..\:/#l/2022/Staytune/app/src/main/res/menu/main.xml" value="0.35052083333333334" />
         <entry key="..\:/#l/2022/Staytune/app/src/main/res/menu/navigation_main.xml" value="0.35052083333333334" />
         <entry key="..\:/#l/2022/Staytune/app/src/main/res/menu/popup_menu.xml" value="0.35052083333333334" />
         <entry key="..\:/#l/2022/Staytune/app/src/main/res/menu/summary.xml" value="0.35052083333333334" />
         <entry key="..\:/#l/2022/Staytune/app/src/main/res/menu/toolbar_action_mode.xml" value="0.35052083333333334" />
-        <entry key="..\:/#l/2022/Staytune/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.36666666666666664" />
-        <entry key="..\:/#l/2022/Staytune/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.36666666666666664" />
-        <entry key="..\:/#l/2022/Staytune/app/src/main/res/xml/settings.xml" value="0.25" />
+        <entry key="..\:/#l/2022/Staytune/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.22" />
+        <entry key="..\:/#l/2022/Staytune/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.14" />
+        <entry key="..\:/#l/2022/Staytune/app/src/main/res/xml/settings.xml" value="0.5" />
+        <entry key="..\:/#l/2022/Staytune/app/src/main/res/xml/settings_notification.xml" value="0.33" />
         <entry key="..\:/#l/2022/Staytune/app/src/main/res/xml/settings_time.xml" value="0.35052083333333334" />
-        <entry key="..\:/Clone/Staytune-Timely/app/src/main/res/drawable/ic_access_time_black_24dp.xml" value="0.1485" />
-        <entry key="..\:/Clone/Staytune-Timely/app/src/main/res/layout/activity_first.xml" value="0.16799999999999998" />
-        <entry key="..\:/Clone/Staytune-Timely/app/src/main/res/layout/activity_main_intro.xml" value="0.19583333333333333" />
-        <entry key="..\:/Clone/Staytune-Timely/app/src/main/res/layout/activity_settings.xml" value="0.19583333333333333" />
-        <entry key="..\:/Clone/Staytune-Timely/app/src/main/res/layout/nav_header_main.xml" value="0.264" />
-        <entry key="..\:/Clone/Staytune-Timely/app/src/main/res/xml/settings.xml" value="0.264" />
-        <entry key="..\:/Users/HK Moradiya/Staytune-Timely/app/src/main/res/layout/activity_about.xml" value="0.34512820512820513" />
-        <entry key="..\:/Users/HK Moradiya/Staytune-Timely/app/src/main/res/layout/activity_first.xml" value="0.33" />
-        <entry key="..\:/Users/HK Moradiya/Staytune-Timely/app/src/main/res/layout/nav_header_main.xml" value="0.35052083333333334" />
-        <entry key="..\:/Users/HK Moradiya/Staytune-Timely/app/src/main/res/xml/settings.xml" value="0.35052083333333334" />
-        <entry key="..\:/Users/HK Moradiya/Staytune-Timely/app/src/main/res/xml/settings_time.xml" value="0.35052083333333334" />
+        <entry key="..\:/#l/2022/Staytune/app/src/main/res/xml/xml_about_main.xml" value="0.22" />
       </map>
     </option>
   </component>
@@ -92,5 +109,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.33" />
+      </ProjectState>
+    </option>
   </component>
 </project>

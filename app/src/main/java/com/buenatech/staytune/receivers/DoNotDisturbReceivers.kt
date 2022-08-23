@@ -1,21 +1,3 @@
-/*
- * Copyright (c) 2020 Felix Hollederer
- *     This file is part of GymWenApp.
- *
- *     GymWenApp is free software: you can redistribute it and/or modify
- *     it under the terms of the GNU General Public License as published by
- *     the Free Software Foundation, either version 3 of the License, or
- *     (at your option) any later version.
- *
- *     GymWenApp is distributed in the hope that it will be useful,
- *     but WITHOUT ANY WARRANTY; without even the implied warranty of
- *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *     GNU General Public License for more details.
- *
- *     You should have received a copy of the GNU General Public License
- *     along with GymWenApp.  If not, see <https://www.gnu.org/licenses/>.
- */
-
 package com.buenatech.staytune.receivers
 
 import android.app.NotificationManager
@@ -68,11 +50,13 @@ fun setDoNotDisturb(context: Context, on: Boolean) {
     if (!PreferenceUtil.isAutomaticDoNotDisturb(context))
         return
 
-    val notificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+    val notificationManager =
+        context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
         // Check if the notification policy access has been granted for the app.
         if (notificationManager.isNotificationPolicyAccessGranted) {
-            val mNotificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+            val mNotificationManager =
+                context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             mNotificationManager.setInterruptionFilter(if (on) NotificationManager.INTERRUPTION_FILTER_NONE else NotificationManager.INTERRUPTION_FILTER_ALL)
         }
     }
@@ -98,10 +82,18 @@ fun setDoNotDisturbReceivers(context: Context, onlyReceivers: Boolean = false) {
             val weekCalendarStart = Calendar.getInstance()
             val startHour = Integer.parseInt(week.fromTime.substring(0, week.fromTime.indexOf(":")))
             weekCalendarStart.set(Calendar.HOUR_OF_DAY, startHour)
-            val startMinute = Integer.parseInt(week.fromTime.substring(week.fromTime.indexOf(":") + 1))
+            val startMinute =
+                Integer.parseInt(week.fromTime.substring(week.fromTime.indexOf(":") + 1))
             weekCalendarStart.set(Calendar.MINUTE, startMinute)
 
-            if (((startHour == calendar.get(Calendar.HOUR_OF_DAY) && startMinute > calendar.get(Calendar.MINUTE)) || startHour > calendar.get(Calendar.HOUR_OF_DAY)) && ((startHour == lastCalendar.get(Calendar.HOUR_OF_DAY) && startMinute < lastCalendar.get(Calendar.MINUTE)) || startHour < lastCalendar.get(Calendar.HOUR_OF_DAY))) {
+            if (((startHour == calendar.get(Calendar.HOUR_OF_DAY) && startMinute > calendar.get(
+                    Calendar.MINUTE
+                )) || startHour > calendar.get(Calendar.HOUR_OF_DAY)) && ((startHour == lastCalendar.get(
+                    Calendar.HOUR_OF_DAY
+                ) && startMinute < lastCalendar.get(Calendar.MINUTE)) || startHour < lastCalendar.get(
+                    Calendar.HOUR_OF_DAY
+                ))
+            ) {
                 lastCalendar = weekCalendarStart
                 on = true
             }
@@ -112,12 +104,22 @@ fun setDoNotDisturbReceivers(context: Context, onlyReceivers: Boolean = false) {
             val endMinute = Integer.parseInt(week.toTime.substring(week.toTime.indexOf(":") + 1))
             weekCalendarEnd.set(Calendar.MINUTE, endMinute)
 
-            if (((endHour == calendar.get(Calendar.HOUR_OF_DAY) && endMinute > calendar.get(Calendar.MINUTE)) || endHour > calendar.get(Calendar.HOUR_OF_DAY)) && ((endHour == lastCalendar.get(Calendar.HOUR_OF_DAY) && endMinute < lastCalendar.get(Calendar.MINUTE)) || endHour < lastCalendar.get(Calendar.HOUR_OF_DAY))) {
+            if (((endHour == calendar.get(Calendar.HOUR_OF_DAY) && endMinute > calendar.get(Calendar.MINUTE)) || endHour > calendar.get(
+                    Calendar.HOUR_OF_DAY
+                )) && ((endHour == lastCalendar.get(Calendar.HOUR_OF_DAY) && endMinute < lastCalendar.get(
+                    Calendar.MINUTE
+                )) || endHour < lastCalendar.get(Calendar.HOUR_OF_DAY))
+            ) {
                 lastCalendar = weekCalendarEnd
                 on = false
             }
 
-            if (((startHour == calendar.get(Calendar.HOUR_OF_DAY) && startMinute < calendar.get(Calendar.MINUTE)) || startHour < calendar.get(Calendar.HOUR_OF_DAY)) && ((endHour == calendar.get(Calendar.HOUR_OF_DAY) && endMinute > calendar.get(Calendar.MINUTE)) || endHour > calendar.get(Calendar.HOUR_OF_DAY)) && !onlyReceivers) {
+            if (((startHour == calendar.get(Calendar.HOUR_OF_DAY) && startMinute < calendar.get(
+                    Calendar.MINUTE
+                )) || startHour < calendar.get(Calendar.HOUR_OF_DAY)) && ((endHour == calendar.get(
+                    Calendar.HOUR_OF_DAY
+                ) && endMinute > calendar.get(Calendar.MINUTE)) || endHour > calendar.get(Calendar.HOUR_OF_DAY)) && !onlyReceivers
+            ) {
                 //Just in lesson
                 setDoNotDisturb(context, true)
             }
@@ -125,9 +127,23 @@ fun setDoNotDisturbReceivers(context: Context, onlyReceivers: Boolean = false) {
 
         if (on != null) {
             if (on) {
-                PreferenceUtil.setOneTimeAlarm(context, TurnOnReceiver::class.java, lastCalendar.get(Calendar.HOUR_OF_DAY), lastCalendar.get(Calendar.MINUTE), 0, TurnOnReceiver.TurnOn_ID)
+                PreferenceUtil.setOneTimeAlarm(
+                    context,
+                    TurnOnReceiver::class.java,
+                    lastCalendar.get(Calendar.HOUR_OF_DAY),
+                    lastCalendar.get(Calendar.MINUTE),
+                    0,
+                    TurnOnReceiver.TurnOn_ID
+                )
             } else {
-                PreferenceUtil.setOneTimeAlarm(context, TurnOffReceiver::class.java, lastCalendar.get(Calendar.HOUR_OF_DAY), lastCalendar.get(Calendar.MINUTE), 0, TurnOffReceiver.TurnOff_ID)
+                PreferenceUtil.setOneTimeAlarm(
+                    context,
+                    TurnOffReceiver::class.java,
+                    lastCalendar.get(Calendar.HOUR_OF_DAY),
+                    lastCalendar.get(Calendar.MINUTE),
+                    0,
+                    TurnOffReceiver.TurnOff_ID
+                )
             }
         }
     }.start()

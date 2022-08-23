@@ -24,12 +24,12 @@ import androidx.appcompat.widget.PopupMenu;
 import androidx.cardview.widget.CardView;
 import androidx.core.widget.ImageViewCompat;
 
+import com.buenatech.staytune.utils.DbHelper;
 import com.pd.chocobar.ChocoBar;
 import com.buenatech.staytune.R;
 import com.buenatech.staytune.model.Teacher;
 import com.buenatech.staytune.utils.AlertDialogsHelper;
 import com.buenatech.staytune.utils.ColorPalette;
-import com.buenatech.staytune.utils.DbHelper;
 import com.buenatech.staytune.utils.PreferenceUtil;
 
 import java.util.ArrayList;
@@ -207,6 +207,7 @@ public class TeachersAdapter extends ArrayAdapter<Teacher> {
                 int key = checkedItems.keyAt(i);
                 if (checkedItems.get(key)) {
                     holder.popup.setVisibility(View.INVISIBLE);
+
                 }
             }
         } else {

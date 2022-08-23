@@ -44,6 +44,9 @@ public class AddSubjectBottomDialogFragment extends BottomSheetDialogFragment {
 
         week = new Week();
         teachername.setText(myValue);
+        if (teachera.isEmpty()){
+            teacher.setVisibility(View.GONE);
+        }
         teacher.setText("Taken by " + teachera);
 
         if (PreferenceUtil.showTimes(getContext())) {

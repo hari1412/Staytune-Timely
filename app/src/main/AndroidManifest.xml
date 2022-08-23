@@ -42,6 +42,9 @@
         <activity
             android:name=".activities.AboutActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.FirstActivity"
+            android:screenOrientation="portrait" />
 
 
         <receiver
