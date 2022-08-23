@@ -11,9 +11,9 @@ import androidx.preference.Preference
 import com.buenatech.staytune.BuildConfig
 import com.buenatech.staytune.R
 import com.buenatech.staytune.databinding.ActivityAboutBinding
-import java.lang.Exception
 
 class AboutActivity : BaseActivity() {
+
     private lateinit var binding: ActivityAboutBinding
 
 
@@ -28,10 +28,10 @@ class AboutActivity : BaseActivity() {
 
     companion object {
         const val ABOUT_DEVELOPER_EMAIL = "harimoradiya123@gmail.com"
-        const val ABOUT_HARI = "https://www.instagram.com/hari_moradiya1610/"
+        const val ABOUT_HARI = "https://www.linkedin.com/in/hari-moradiya-0a7145179/"
         const val ABOUT_GAURANG = "https://www.instagram.com/gaurang_dhameliya/"
 
-        class AboutFragment: BasePreference() {
+        class AboutFragment : BasePreference() {
 
             override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
                 setPreferencesFromResource(R.xml.xml_about_main, rootKey)
@@ -54,51 +54,51 @@ class AboutActivity : BaseActivity() {
                             """.trimIndent()
                             shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage)
                             startActivity(Intent.createChooser(shareIntent, "choose one"))
-                        }
-                        catch (e: Exception) {
+                        } catch (e: Exception) {
                             //e.toString();
                         }
 
                         true
 
                     }
-                findPreference < Preference >("KEY_RATE")
-                        ?.setOnPreferenceClickListener {
+                findPreference<Preference>("KEY_RATE")
+                    ?.setOnPreferenceClickListener {
 
-                            val uri = Uri.parse("market://details?id=" + requireContext().packageName)
-                            val goToMarketIntent = Intent(Intent.ACTION_VIEW, uri)
+                        val uri = Uri.parse("market://details?id=" + requireContext().packageName)
+                        val goToMarketIntent = Intent(Intent.ACTION_VIEW, uri)
 
-                            var flags = Intent.FLAG_ACTIVITY_NO_HISTORY or Intent.FLAG_ACTIVITY_MULTIPLE_TASK
-                            flags = if (Build.VERSION.SDK_INT >= 21) {
-                                flags or Intent.FLAG_ACTIVITY_NEW_DOCUMENT
-                            } else {
-                                flags or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                            }
-                            goToMarketIntent.addFlags(flags)
+                        var flags =
+                            Intent.FLAG_ACTIVITY_NO_HISTORY or Intent.FLAG_ACTIVITY_MULTIPLE_TASK
+                        flags = if (Build.VERSION.SDK_INT >= 21) {
+                            flags or Intent.FLAG_ACTIVITY_NEW_DOCUMENT
+                        } else {
+                            flags or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                        }
+                        goToMarketIntent.addFlags(flags)
 
-                            try {
-                                startActivity(goToMarketIntent)
-                            } catch (e: ActivityNotFoundException) {
-                                val intent = Intent(Intent.ACTION_VIEW,
-                                    Uri.parse("http://play.google.com/store/apps/details?id=" + requireContext().packageName))
+                        try {
+                            startActivity(goToMarketIntent)
+                        } catch (e: ActivityNotFoundException) {
+                            val intent = Intent(
+                                Intent.ACTION_VIEW,
+                                Uri.parse("http://play.google.com/store/apps/details?id=" + requireContext().packageName)
+                            )
 
-                                startActivity(intent)
-                            }
-                            true
-                }
-//
+                            startActivity(intent)
+                        }
+                        true
+                    }
                 findPreference<Preference>("KEY_FEEDBACK")
                     ?.setOnPreferenceClickListener {
-                        val intent = Intent(Intent.ACTION_VIEW).apply {
+                        val intent = Intent(Intent.ACTION_SENDTO).apply {
                             data = Uri.parse("mailto:${ABOUT_DEVELOPER_EMAIL}")
                         }
 
-                        if (intent.resolveActivity(requireContext().packageManager) != null)
-                            startActivity(intent)
+                        startActivity(intent)
                         true
+
                     }
 
-//
                 findPreference<Preference>("KEY_HARI")
                     ?.setOnPreferenceClickListener {
                         CustomTabsIntent.Builder().build()

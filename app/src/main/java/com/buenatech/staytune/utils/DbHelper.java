@@ -1,10 +1,12 @@
 package com.buenatech.staytune.utils;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
@@ -15,21 +17,15 @@ import com.buenatech.staytune.model.Note;
 import com.buenatech.staytune.model.Teacher;
 import com.buenatech.staytune.model.Week;
 import com.buenatech.staytune.profiles.ProfileManagement;
+import com.github.tlaabs.timetableview.TimetableView;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 
-/**
- * Created by Ulan on 07.09.2018.
- */
-
-//TODO: Rewrite to Kotlin and RoomDB
 public class DbHelper extends SQLiteOpenHelper {
     private Context context;
-
     private static final int DB_VERSION = 7;
     private static final String DB_NAME = "timetabledb";
-
     private static final String TIMETABLE = "timetable";
     private static final String TIMETABLE_ODD = "timetable_odd";
     private static final String WEEK_ID = "id";
@@ -245,6 +241,7 @@ public class DbHelper extends SQLiteOpenHelper {
         return getWeek(fragment, getTimetableTable(now));
     }
 
+    @SuppressLint("Range")
     @NonNull
     private ArrayList<Week> getWeek(String fragment, String dbName) {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -264,12 +261,10 @@ public class DbHelper extends SQLiteOpenHelper {
             week.setColor(cursor.getInt(cursor.getColumnIndex(WEEK_COLOR)));
             weeklist.add(week);
         }
+
         return weeklist;
     }
 
-    /**
-     * Methods for Homeworks activity
-     **/
     public void insertHomework(@NonNull Homework homework) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -292,6 +287,7 @@ public class DbHelper extends SQLiteOpenHelper {
         db.close();
     }
 
+
     public void deleteHomeworkById(@NonNull Homework homework) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(HOMEWORKS, HOMEWORKS_ID + " = ? ", new String[]{String.valueOf(homework.getId())});
@@ -299,6 +295,7 @@ public class DbHelper extends SQLiteOpenHelper {
     }
 
 
+    @SuppressLint("Range")
     @NonNull
     public ArrayList<Homework> getHomework() {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -320,7 +317,7 @@ public class DbHelper extends SQLiteOpenHelper {
     }
 
     /**
-     * Methods for Notes activity
+     * Methods for Notes
      **/
     public void insertNote(@NonNull Note note) {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -348,6 +345,7 @@ public class DbHelper extends SQLiteOpenHelper {
         db.close();
     }
 
+    @SuppressLint("Range")
     @NonNull
     public ArrayList<Note> getNote() {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -367,9 +365,19 @@ public class DbHelper extends SQLiteOpenHelper {
         return notelist;
     }
 
-    /**
-     * Methods for Teachers activity
-     **/
+    public void insertSubjectT(@NonNull Week week) {
+        SQLiteDatabase sqLiteDatabase = getReadableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(WEEK_SUBJECT, week.getSubject());
+        contentValues.put(WEEK_COLOR, week.getColor());
+        contentValues.put(WEEK_FROM_TIME, week.getFromTime());
+        contentValues.put(WEEK_TO_TIME, week.getToTime());
+        sqLiteDatabase.insert(WEEK_ID, null, contentValues);
+        sqLiteDatabase.close();
+
+
+    }
+
     public void insertTeacher(@NonNull Teacher teacher) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -400,6 +408,7 @@ public class DbHelper extends SQLiteOpenHelper {
         db.close();
     }
 
+    @SuppressLint("Range")
     @NonNull
     public ArrayList<Teacher> getTeacher() {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -422,7 +431,7 @@ public class DbHelper extends SQLiteOpenHelper {
     }
 
     /**
-     * Methods for Exams activity
+     * Methods for Exams vice datasets
      **/
     public void insertExam(@NonNull Exam exam) {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -450,12 +459,14 @@ public class DbHelper extends SQLiteOpenHelper {
         db.close();
     }
 
+
     public void deleteExamById(@NonNull Exam exam) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(EXAMS, EXAMS_ID + " =? ", new String[]{String.valueOf(exam.getId())});
         db.close();
     }
 
+    @SuppressLint("Range")
     @NonNull
     public ArrayList<Exam> getExam() {
         SQLiteDatabase db = this.getWritableDatabase();

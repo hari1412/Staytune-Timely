@@ -5,7 +5,9 @@ public class Exam {
     private String subject, teacher, time, date, room;
     private int id, color;
 
-    public Exam() {}
+    public Exam() {
+        //Note: this is called default constructor of that particular class
+    }
 
     public Exam(String subject, String teacher, String time, String date, String room, int color) {
         this.subject = subject;
@@ -15,6 +17,7 @@ public class Exam {
         this.room = room;
         this.color = color;
     }
+
 
     public String getSubject() {
         return subject;

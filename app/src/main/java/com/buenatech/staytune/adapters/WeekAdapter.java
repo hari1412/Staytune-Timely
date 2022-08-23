@@ -2,9 +2,6 @@ package com.buenatech.staytune.adapters;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.Intent;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.util.SparseBooleanArray;
 import android.util.TypedValue;
@@ -13,6 +10,8 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -23,8 +22,6 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.PopupMenu;
-import androidx.cardview.widget.CardView;
-import androidx.core.widget.ImageViewCompat;
 import androidx.fragment.app.FragmentActivity;
 
 import com.buenatech.staytune.R;
@@ -33,19 +30,13 @@ import com.buenatech.staytune.fragments.AddSubjectBottomDialogFragment;
 import com.buenatech.staytune.model.Week;
 import com.buenatech.staytune.receivers.DoNotDisturbReceiversKt;
 import com.buenatech.staytune.utils.AlertDialogsHelper;
-import com.buenatech.staytune.utils.ColorPalette;
 import com.buenatech.staytune.utils.DbHelper;
 import com.buenatech.staytune.utils.PreferenceUtil;
-import com.buenatech.staytune.utils.WeekUtils;
 import com.google.android.material.chip.Chip;
 
 import java.util.ArrayList;
 import java.util.Objects;
 
-
-/**
- * Created by Ulan on 08.09.2018.
- */
 public class WeekAdapter extends ArrayAdapter<Week> {
 
     @NonNull
@@ -55,14 +46,15 @@ public class WeekAdapter extends ArrayAdapter<Week> {
     private final ArrayList<Week> weeklist;
     private Week week;
     private final ListView mListView;
+    private int lastPosition = -1;
     private Context context;
 
     private static class ViewHolder {
         TextView subject;
-//        TextView teacher;
+        //        TextView teacher;
 //        TextView time;
         TextView room;
-        Chip time,teacher;
+        Chip time, teacher;
         ImageView popup;
         //CardView cardView;
         AppCompatImageView cardView;
@@ -118,7 +110,7 @@ public class WeekAdapter extends ArrayAdapter<Week> {
         TypedValue outValue = new TypedValue();
         getContext().getTheme().resolveAttribute(android.R.attr.selectableItemBackground, outValue, true);
         holder.teacher.setBackgroundResource(outValue.resourceId);
-       // holder.teacher.setOnClickListener((View v) -> mActivity.startActivity(new Intent(mActivity, TeachersActivity.class)));
+        // holder.teacher.setOnClickListener((View v) -> mActivity.startActivity(new Intent(mActivity, TeachersActivity.class)));
 
         holder.room.setText(week.getRoom());
         holder.room.setOnClickListener(null);
@@ -130,7 +122,8 @@ public class WeekAdapter extends ArrayAdapter<Week> {
 //            int end = WeekUtils.getMatchingScheduleEnd(week.getToTime(), getContext());
 //            if (start == end) {
 //                holder.time.setText(start + ". " + getContext().getString(R.string.lesson));
-//            } else {
+//            }
+//            else {
 //                holder.time.setText(start + ".-" + end + ". " + getContext().getString(R.string.lesson));
 //            }
 //        }
@@ -138,11 +131,11 @@ public class WeekAdapter extends ArrayAdapter<Week> {
             Bundle args = new Bundle();
             args.putString("key", subject);
             args.putString("teacher", teacher);
-            args.putString("timefrom",time_from);
-            args.putString("timeto",time_to);
+            args.putString("timefrom", time_from);
+            args.putString("timeto", time_to);
             AddSubjectBottomDialogFragment bottomSheet = new AddSubjectBottomDialogFragment();
-            bottomSheet .setArguments(args);
-            bottomSheet .show(((FragmentActivity) mActivity).getSupportFragmentManager(),bottomSheet.getTag());
+            bottomSheet.setArguments(args);
+            bottomSheet.show(((FragmentActivity) mActivity).getSupportFragmentManager(), bottomSheet.getTag());
 
         });
         holder.cardView.setColorFilter(week.getColor());
@@ -158,6 +151,7 @@ public class WeekAdapter extends ArrayAdapter<Week> {
                             dbHelper.deleteWeekById(Objects.requireNonNull(getItem(position)));
                             dbHelper.updateWeek(Objects.requireNonNull(getItem(position)));
                             weeklist.remove(position);
+
                             notifyDataSetChanged();
                             DoNotDisturbReceiversKt.setDoNotDisturbReceivers(mActivity, false);
                         }, getContext().getString(R.string.delete_week, week.getSubject()));

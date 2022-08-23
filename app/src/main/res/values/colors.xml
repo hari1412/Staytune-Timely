@@ -35,5 +35,7 @@
     <color name="color_surface">#ffffff</color>
     <color name="colorDarkerSurface">#0F000000</color>
     <color name="transparent">#00000000</color>
+    <color name="color_maincl">#F2423DE4</color>
+    <color name="color_cl">#E47171</color>
 
 </resources>

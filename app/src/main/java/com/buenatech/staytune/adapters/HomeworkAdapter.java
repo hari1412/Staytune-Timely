@@ -107,6 +107,7 @@ public class HomeworkAdapter extends ArrayAdapter<Homework> {
                         dbHelper.deleteHomeworkById(Objects.requireNonNull(getItem(position)));
                         dbHelper.updateHomework(Objects.requireNonNull(getItem(position)));
                         homeworklist.remove(position);
+
                         notifyDataSetChanged();
                         return true;
                     } else if (itemId == R.id.edit_popup) {

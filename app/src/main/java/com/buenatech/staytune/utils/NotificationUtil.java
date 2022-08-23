@@ -72,7 +72,7 @@ public class NotificationUtil {
                 return;
 
             NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "id")
-                    .setSmallIcon(R.drawable.icon)
+                    .setSmallIcon(R.drawable.ic_bird_svgrepo_com)
                     .setContentTitle(context.getString(R.string.notification_summary_title) + (ProfileManagement.isMoreThanOneProfile() ? " (" + ProfileManagement.getProfile(profilePosition).getName() + ")" : ""))
                     .setStyle(new NotificationCompat.BigTextStyle().bigText(lessons));
 
@@ -153,7 +153,7 @@ public class NotificationUtil {
 
             NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "id")
                     .setStyle(style)
-                    .setSmallIcon(R.drawable.ic_baseline_circle_notifications_24)
+                    .setSmallIcon(R.drawable.ic_hero_bell_24)
                     .setColor(color);
 
 

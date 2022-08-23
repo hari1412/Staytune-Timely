@@ -11,6 +11,7 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 
 import com.buenatech.staytune.R;
+import com.buenatech.staytune.fragments.NotificationSettingsFragment;
 import com.buenatech.staytune.fragments.SettingsFragment;
 import com.buenatech.staytune.utils.PreferenceUtil;
 
@@ -20,7 +21,6 @@ public class SettingsActivity extends AppCompatActivity implements PreferenceFra
     public static final String KEY_SEVEN_DAYS_SETTING = "sevendays";
     public static final String KEY_SCHOOL_WEBSITE_SETTING = "schoolwebsite";
     public static final String KEY_START_WEEK_ON_SUNDAY = "start_sunday";
-
     public int loadedFragments = 0;
 
     @Override
@@ -75,7 +75,8 @@ public class SettingsActivity extends AppCompatActivity implements PreferenceFra
         if (loadedFragments == 0) {
             startActivity(new Intent(this, MainActivity.class));
             finish();
-        } else {
+        }
+        else {
             loadedFragments--;
             try {
                 Objects.requireNonNull(getSupportActionBar()).setTitle(R.string.settings);

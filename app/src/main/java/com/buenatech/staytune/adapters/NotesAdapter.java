@@ -30,10 +30,6 @@ import com.buenatech.staytune.utils.PreferenceUtil;
 import java.util.ArrayList;
 import java.util.Objects;
 
-
-/**
- * Created by Ulan on 28.09.2018.
- */
 public class NotesAdapter extends ArrayAdapter<Note> {
 
     @NonNull

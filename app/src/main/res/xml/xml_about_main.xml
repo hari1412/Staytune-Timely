@@ -25,6 +25,7 @@
         <Preference
             app:icon="@drawable/ic_baseline_person_24"
             app:key="KEY_GAURANG"
+            app:isPreferenceVisible="true"
             app:title="@string/gaurang" />
         <Preference
             app:icon="@drawable/ic_baseline_copyright_24"

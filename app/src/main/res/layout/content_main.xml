@@ -7,10 +7,14 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/app_bar_main">
 
+
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="62dp"/>
+
+
     <!--the usual bottom navigation bar with items-->
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottomAppBar"
@@ -21,8 +25,11 @@
         app:backgroundTint="@android:color/white"
         app:fabAlignmentMode="end"
         app:fabCradleMargin="10dp"
+        app:hideOnScroll="true"
+        app:fabAnimationMode="slide"
         app:fabCradleRoundedCornerRadius="10dp"
         app:fabCradleVerticalOffset="10dp" />
+
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
@@ -32,6 +39,8 @@
         android:contentDescription="@string/app_name"
         android:src="@drawable/ic_add_black_24dp"
         app:layout_anchor="@id/bottomAppBar"
+        android:clickable="true"
         app:tint="@android:color/white" />
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

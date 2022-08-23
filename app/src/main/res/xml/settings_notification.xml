@@ -12,6 +12,8 @@
         android:summary="@string/notification_reminder_settings_desc"
         android:title="@string/notification_reminder_setting"
         app:iconSpaceReserved="false" />
+
+
     <SwitchPreferenceCompat
         android:defaultValue="true"
         android:key="notification_end"
@@ -29,5 +31,6 @@
         android:summary="@string/notification_alarm_setting_desc"
         android:title="@string/notification_alarm_setting"
         app:iconSpaceReserved="false" />
+
 
 </PreferenceScreen>

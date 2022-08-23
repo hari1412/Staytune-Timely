@@ -7,7 +7,9 @@ public class Week {
     private String subject, fragment, teacher, room, fromtime, totime, time;
     private int id, color;
 
-    public Week() {}
+
+    public Week() {
+    }
 
     public Week(String subject, String teacher, String room, String fromtime, String totime, int color) {
         this.subject = subject;
@@ -45,6 +47,7 @@ public class Week {
     public String getToTime() {
         return totime;
     }
+
 
     public void setToTime(String totime) {
         this.totime = totime;

@@ -35,6 +35,7 @@ import me.yaoandy107.ntut_timetable.model.CourseInfo;
 import me.yaoandy107.ntut_timetable.model.StudentCourse;
 
 public class SummaryActivity extends AppCompatActivity {
+
     public static final String ACTION_SHOW = "showSummary";
 
     private String schoolStart;
@@ -126,9 +127,6 @@ public class SummaryActivity extends AppCompatActivity {
     }
 
 
-    /**
-     * Setup the course Table with Library: https://github.com/asdoi/TimetableUI
-     */
     private void setupCourseTableLibrary1() {
         CourseTableLayout courseTable = findViewById(R.id.courseTable);
         courseTable.setVisibility(View.VISIBLE);
@@ -140,7 +138,9 @@ public class SummaryActivity extends AppCompatActivity {
 
         List<List<String>> durationStrings = new ArrayList<>();
         for (int i = 0; i < 7; i++) {
+
             durationStrings.add(new ArrayList<>());
+
         }
 
         for (int j = 0; j < weeks.size(); j++) {
@@ -168,7 +168,6 @@ public class SummaryActivity extends AppCompatActivity {
 
         // Set timetable
         studentCourse.setCourseList(courseInfoList);
-
         courseTable.setHeader(header);
         courseTable.setTextSize(14);
         courseTable.setStudentCourse(studentCourse);
@@ -215,10 +214,6 @@ public class SummaryActivity extends AppCompatActivity {
         }
     }
 
-
-    /**
-     * Setup the course Table with Library: https://github.com/asdoi/TimetableView
-     */
     private void setupTimetableLibrary2() {
         List<String> done = new ArrayList<>();
         ArrayList<String> colors = new ArrayList<>();
@@ -247,6 +242,7 @@ public class SummaryActivity extends AppCompatActivity {
                     }
                     i1 = 0;
                 }
+
 
                 CustomSchedule schedule = new CustomSchedule(w, j);
                 schedules.add(schedule);
@@ -283,14 +279,23 @@ public class SummaryActivity extends AppCompatActivity {
 
         ((LinearLayout) findViewById(R.id.summary_linear)).addView(timetable);
 
-/*        timetable.setOnStickerSelectEventListener((idx, schedules1) -> {
-            CustomSchedule schedule = (CustomSchedule) schedules1.get(idx);
-            Week week = schedule.getWeek();
-            final View alertLayout = this.getLayoutInflater().inflate(R.layout.dialog_add_subject, null);
-            AlertDialogsHelper.getEditSubjectDialog(this, alertLayout, () -> setupTimetableLibrary2(), week);
-        });*/
+//     timetable.setOnStickerSelectEventListener((idx, schedules1) -> {
+//            CustomSchedule schedule = (CustomSchedule) schedules1.get(idx);
+//            Week week = schedule.getWeek();
+//            final View alertLayout = this.getLayoutInflater().inflate(R.layout.dialog_add_subject, null);
+//            AlertDialogsHelper.getEditSubjectDialog(this, alertLayout, () -> setupTimetableLibrary2(), week);
+//        });
 
     }
+
+    private static void customSchedule() {
+        int a = 10;
+        String name, time, date;
+        //need to convert the time and date
+
+
+    }
+
 
     private static class CustomSchedule extends Schedule {
         @NonNull

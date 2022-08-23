@@ -2,6 +2,7 @@ package com.buenatech.staytune.fragments;
 
 import android.app.AlarmManager;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.NumberPicker;
 
@@ -13,6 +14,7 @@ import androidx.preference.SwitchPreferenceCompat;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.buenatech.staytune.R;
 import com.buenatech.staytune.activities.SettingsActivity;
+import com.buenatech.staytune.activities.TimeSettingsActivity;
 import com.buenatech.staytune.profiles.ProfileManagement;
 import com.buenatech.staytune.receivers.DailyReceiver;
 import com.buenatech.staytune.utils.PreferenceUtil;
@@ -59,7 +61,7 @@ public class NotificationSettingsFragment extends PreferenceFragmentCompat {
 
 
         myPref = findPreference("alarm");
-        Objects.requireNonNull(myPref).setOnPreferenceClickListener((Preference p) -> {
+        Objects.requireNonNull(myPref).setOnPreferenceClickListener(p -> {
             int[] oldTimes = PreferenceUtil.getAlarmTime(getContext());
             TimePickerDialog timePickerDialog = new TimePickerDialog(getActivity(),
                     (view, hourOfDay, minute) -> {
@@ -68,13 +70,26 @@ public class NotificationSettingsFragment extends PreferenceFragmentCompat {
                         p.setSummary(hourOfDay + ":" + minute);
                     }, oldTimes[0], oldTimes[1], true);
             timePickerDialog.setTitle(R.string.choose_time);
-            timePickerDialog.show();
             return true;
         });
+
+//
+//        Objects.requireNonNull(myPref).setOnPreferenceClickListener((Preference p) -> {
+//            int[] oldTimes = PreferenceUtil.getAlarmTime(getContext());
+//            TimePickerDialog timePickerDialog = new TimePickerDialog(getActivity(),
+//                    (view, hourOfDay, minute) -> {
+//                        PreferenceUtil.setAlarmTime(requireContext(), hourOfDay, minute, 0);
+//                        PreferenceUtil.setRepeatingAlarm(requireContext(), DailyReceiver.class, hourOfDay, minute, 0, DailyReceiver.DailyReceiverID, AlarmManager.INTERVAL_DAY);
+//                        p.setSummary(hourOfDay + ":" + minute);
+//                    }, oldTimes[0], oldTimes[1], true);
+//            timePickerDialog.setTitle(R.string.choose_time);
+//            return true;
+//        });
         int[] oldTimes = PreferenceUtil.getAlarmTime(getContext());
         myPref.setSummary(oldTimes[0] + ":" + oldTimes[1]);
 
     }
+
 
     private void setNotif() {
         boolean show = PreferenceManager.getDefaultSharedPreferences(requireContext()).getBoolean("timetableNotif", true);

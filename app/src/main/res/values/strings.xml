@@ -1,10 +1,8 @@
 <resources>
-    <string name="app_name">Staytune</string>
-
+    <string name="app_name">Timely</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="settings">Settings</string>
-
     <!-- Greetings -->
     <string name="greeting_default">Good day!</string>
     <string name="greeting_morning">Good morning!</string>
@@ -19,17 +17,16 @@
     <string name="saturday">Saturday</string>
     <string name="sunday">Sunday</string>
     <string name="selected">Selected</string>
-
     <!-- Main Activity strings -->
     <string name="seven_days_of_the_week">7 days of the Week</string>
     <string name="subject">Subject</string>
     <string name="field_error">field cannot be empty!</string>
     <string name="time_error">Time field cannot be empty!</string>
+    <string name="field_schedule">Schedule</string>
     <string name="delete">Delete</string>
     <string name="edit">Edit</string>
     <string name="school_website">School website</string>
     <string name="please_set_school_website_url">Please set the URL of your school website in settings.</string>
-
     <string name="add_subject">Add subject</string>
     <string name="edit_subject">Edit subject</string>
     <string name="teacher">Teacher</string>
@@ -56,7 +53,6 @@
     <string name="edit_homework">Edit assignment</string>
     <string name="add_homework">Add assignment</string>
     <string name="date">Date</string>
-
     <!-- Notes Activity strings -->
     <string name="title_dialog">Title:</string>
     <string name="add_note">Add note</string>
@@ -64,7 +60,6 @@
     <string name="title_error">Title field cannot be empty!</string>
     <string name="title">Title</string>
     <string name="saved">Saved</string>
-
     <!-- Teachers Activity strings -->
     <string name="teachers">Teachers</string>
     <string name="add_teacher">Add teacher</string>
@@ -77,7 +72,6 @@
     <string name="phone_number">Phone number</string>
     <string name="post">Post</string>
     <string name="email">Email</string>
-
     <!-- Exams Activity strings -->
     <string name="add_exam">Add exam</string>
     <string name="date_dialog">Date:</string>
@@ -107,6 +101,7 @@
     <string name="permission_required_description">These authorization (s) are required to ensure comprehensive functionality</string>
     <string name="permission_ok_button">Grant\u2026</string>
     <string name="permission_cancel_button">Cancel</string>
+    <string name="notificatio_time_for_day">You are %s minutes away</string>
 
     <string name="no">No</string>
     <string name="are_you_sure">Are you sure?</string>
@@ -147,7 +142,8 @@
     <string name="Documents">Documents</string>
     <string name="Downloads">Downloads</string>
     <string name="colorPickerDialog_preset">Presets</string>
-    <string name="delete_content">Should %s be deleted?</string>
+    <string name="delete_content">Should be deleted?</string>
+    <string name="logout_content">Should logout from %s?</string>
     <string name="delete_week">the subject %s</string>
     <string name="delete_note">the note %s</string>
     <string name="delete_exam">the exam %s</string>
@@ -156,12 +152,10 @@
         \nIt is advisable to create a backup beforehand!</string>
     <string name="successfully_deleted_everything">Successfully deleted everything</string>
     <string name="an_error_occurred">An error occurred</string>
-
     <string name="no_email_app">No email app installed</string>
     <string name="no_navigation_app">No navigation app installed</string>
     <string name="no_calendar_app">No calendar app installed</string>
     <string name="add_to_calendar">Should this event be added to your calendar?</string>
-
     <string name="choose_theme_setting">Choose theme</string>
     <string name="theme_light">Light</string>
     <string name="theme_dark">Dark</string>
@@ -188,13 +182,9 @@
         <item>Sat</item>
         <item>Sun</item>
     </string-array>
-
     <string-array name="preselected_subjects"></string-array>
-
     <string name="pick_a_subject">Pick a subject</string>
     <string name="new_subject">New subject</string>
-
-
     <string name="app_widget_configure_intensity">Background color intensity（%d%%）</string>
     <string name="app_widget_configure_time_style">Time style（%s）</string>
     <string name="configure_widget_controls">Configure widget controls</string>
@@ -208,7 +198,6 @@
     <string name="style_3">Style 3</string>
     <string name="no_class">No subjects</string>
     <string name="confirm">Confirm</string>
-
     <string name="time_settings">Time settings</string>
     <string name="time_settings_desc">Settings about the start of your collage and the length of your lecture.</string>
     <string name="ok">OK</string>
@@ -253,20 +242,19 @@
     <string name="app_copyright">Copyright &#169; 2022 Staytune \n All rights reserved</string>
     <string name="dialog_option_ok">Ok</string>
     <string name="msg_about_version">Version</string>
-    <string name="intro_1_title">Welcome to Staytune</string>
+    <string name="intro_1_title">Welcome to Timely</string>
     <string name="intro_1_description">Don\'t be stressed Manage your time freely</string>
     <string name="intro_2_title">Manage your classes easily</string>
-    <string name="intro_2_description">Class Timetable is the perfect companion for school, college or university.</string>
+    <string name="intro_2_description">Timely is the perfect companion for school, college or university.</string>
     <string name="intro_3_title">Get Notified</string>
     <string name="intro_3_description">Get real time notification of your classes or lectures</string>
     <string name="intro_4_title">Do Not Disturb</string>
     <string name="intro_4_description">No problem the app automatically mutes your phone during lecture.</string>
-
-
     <string name="create_account">Create Account</string>
     <string name="upload_your_image">Upload Your Image</string>
     <string name="full_name">Full Name</string>
     <string name="email_address">Email Address</string>
+    <string name="collegename">Enter your college name</string>
     <string name="sign_up">Sign Up</string>
     <string name="sign_in">Sign In</string>
     <string name="i_m_already_a_member">I am already a member.</string>
@@ -287,4 +275,11 @@
     <string name="License" translatable="false">Licensed under the GPLv3</string>
     <string name="activity_about">About</string>
     <string name="feedback">Feedback</string>
+    <string name="intro_title">Repeat Introduction</string>
+    <string name="intro_title_desc">Introduction screen for review.</string>
+    <string name="staytune_timely">Staytune - Timely</string>
+    <string name="field_subject_code">Subject Code</string>
+    <string name="button_save">Save</string>
+    <string name="empty_view_no_class_title">No data found</string>
+    <string name="empty_view_no_class_summary">You currently have no data for that day.You can add by below button.</string>
 </resources>

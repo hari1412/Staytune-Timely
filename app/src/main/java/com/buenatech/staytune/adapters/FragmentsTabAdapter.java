@@ -9,9 +9,6 @@ import androidx.fragment.app.FragmentStatePagerAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Ulan on 05.09.2018.
- */
 public class FragmentsTabAdapter extends FragmentStatePagerAdapter {
 
     private final List<Fragment> mFragmentList = new ArrayList<>();
@@ -19,6 +16,9 @@ public class FragmentsTabAdapter extends FragmentStatePagerAdapter {
 
     public FragmentsTabAdapter(@NonNull FragmentManager fm) {
         super(fm, FragmentsTabAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+    }
+
+    private void FragmentBar() {
     }
 
     @NonNull

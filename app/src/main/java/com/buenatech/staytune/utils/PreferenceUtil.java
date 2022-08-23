@@ -46,7 +46,8 @@ import androidx.preference.PreferenceManager;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.buenatech.staytune.R;
 import com.buenatech.staytune.activities.SettingsActivity;
-import com.buenatech.staytune.receivers.DoNotDisturbReceiversKt;import com.buenatech.staytune.utils.WeekUtils;
+import com.buenatech.staytune.receivers.DoNotDisturbReceiversKt;
+import com.buenatech.staytune.utils.WeekUtils;
 
 import java.util.Calendar;
 import java.util.Collections;

@@ -28,12 +28,10 @@ import androidx.annotation.NonNull;
 import com.buenatech.staytune.utils.NotificationUtil;
 import com.buenatech.staytune.utils.PreferenceUtil;
 
-/**
- * Created by Ulan on 28.01.2019.
- */
 public class DailyReceiver extends BroadcastReceiver {
 
     public static final int DailyReceiverID = 10000;
+
 
     @Override
     public void onReceive(@NonNull Context context, @NonNull Intent intent) {
