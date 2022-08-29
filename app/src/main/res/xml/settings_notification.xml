@@ -26,6 +26,7 @@
         android:summary="@string/notification_show_permanent_setting_desc"
         android:title="@string/notification_show_permanent_setting"
         app:iconSpaceReserved="false" />
+
     <Preference
         android:key="alarm"
         android:summary="@string/notification_alarm_setting_desc"

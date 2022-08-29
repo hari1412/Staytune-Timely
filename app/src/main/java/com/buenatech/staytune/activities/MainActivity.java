@@ -139,8 +139,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
 
         if (firebaseUser != null) {
-            // When firebase user is not equal to null
-            // Set image on image view
             Glide.with(MainActivity.this)
                     .load(firebaseUser.getPhotoUrl())
                     .into(ivImage);

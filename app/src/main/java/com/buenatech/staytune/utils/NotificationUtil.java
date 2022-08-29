@@ -56,6 +56,7 @@ public class NotificationUtil {
     private static final int NOTIFICATION_NEXT_WEEK_ID = 3030;
     private static final String CHANNEL_ID = "notification";
     private static final String CHANNEL_ID_LOUD = "notificationLoud";
+    
 
     public static void sendNotificationSummary(Context context, boolean alert) {
         ProfileManagement.initProfiles(context);

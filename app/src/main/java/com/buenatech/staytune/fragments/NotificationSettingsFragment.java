@@ -9,6 +9,7 @@ import android.widget.NumberPicker;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceManager;
+import androidx.preference.SwitchPreference;
 import androidx.preference.SwitchPreferenceCompat;
 
 import com.afollestad.materialdialogs.MaterialDialog;
@@ -58,22 +59,27 @@ public class NotificationSettingsFragment extends PreferenceFragmentCompat {
             }
             return true;
         });
-
-
         myPref = findPreference("alarm");
-        Objects.requireNonNull(myPref).setOnPreferenceClickListener(p -> {
+        Objects.requireNonNull(myPref).setOnPreferenceClickListener((Preference preference) -> {
+            System.out.println("alarm activated");
             int[] oldTimes = PreferenceUtil.getAlarmTime(getContext());
             TimePickerDialog timePickerDialog = new TimePickerDialog(getActivity(),
                     (view, hourOfDay, minute) -> {
                         PreferenceUtil.setAlarmTime(requireContext(), hourOfDay, minute, 0);
                         PreferenceUtil.setRepeatingAlarm(requireContext(), DailyReceiver.class, hourOfDay, minute, 0, DailyReceiver.DailyReceiverID, AlarmManager.INTERVAL_DAY);
-                        p.setSummary(hourOfDay + ":" + minute);
+                        preference.setSummary(hourOfDay + ":" + minute);
+
                     }, oldTimes[0], oldTimes[1], true);
             timePickerDialog.setTitle(R.string.choose_time);
+            timePickerDialog.show();
+
             return true;
         });
+        int[] oldTimes = PreferenceUtil.getAlarmTime(getContext());
+        myPref.setSummary(oldTimes[0] + ":" + oldTimes[1]);
 
-//
+
+        //
 //        Objects.requireNonNull(myPref).setOnPreferenceClickListener((Preference p) -> {
 //            int[] oldTimes = PreferenceUtil.getAlarmTime(getContext());
 //            TimePickerDialog timePickerDialog = new TimePickerDialog(getActivity(),
@@ -85,8 +91,8 @@ public class NotificationSettingsFragment extends PreferenceFragmentCompat {
 //            timePickerDialog.setTitle(R.string.choose_time);
 //            return true;
 //        });
-        int[] oldTimes = PreferenceUtil.getAlarmTime(getContext());
-        myPref.setSummary(oldTimes[0] + ":" + oldTimes[1]);
+//        int[] oldTimes = PreferenceUtil.getAlarmTime(getContext());
+//        myPref.setSummary(oldTimes[0] + ":" + oldTimes[1]);
 
     }
 
