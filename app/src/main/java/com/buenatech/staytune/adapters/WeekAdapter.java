@@ -51,8 +51,8 @@ public class WeekAdapter extends ArrayAdapter<Week> {
 
     private static class ViewHolder {
         TextView subject;
-        //        TextView teacher;
-//        TextView time;
+        //TextView teacher;
+//      TextView time;
         TextView room;
         Chip time, teacher;
         ImageView popup;
