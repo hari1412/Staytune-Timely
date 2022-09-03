@@ -1,6 +1,7 @@
 # Staytune-Timely
 
-<p align='center'><img src='https://img.shields.io/badge/license-GPL 3-333333'/></a>
+<p align='center'>
+	 <a href='https://github.com/hari1412/Staytune-Timely/blob/master/LICENSE.md'><img src='https://img.shields.io/badge/license-GPL 3-333333'/></a>
 	<img src='https://img.shields.io/badge/-translations%20needed!-yellow'/>
 </p>
 
