@@ -42,6 +42,11 @@ The app is available through Google Play Soon.. \
 [<img src="https://zeevector.com/wp-content/uploads/Google-Drive-Logo-Transparent.png"
      alt="Get it on G-Drive"
      height="80">](https://drive.google.com/file/d/1Zk8qr-ZfyQ11rBlg7-yKApjzIPWnyxle/view?usp=sharing)
+     
+
+### Spotify Playing 🎧
+
+[![spotify-github-profile](https://spotify-github-profile.vercel.app/api/view.svg?uid=31i7wanbyvrpbkgyrassjmkucrim&redirect=true)](https://spotify-github-profile.vercel.app/api/view.svg?uid=31i7wanbyvrpbkgyrassjmkucrim&cover_image=true&theme=default&show_offline=false&bar_color=53b14f&bar_color_cover=false) 
 
 
 
