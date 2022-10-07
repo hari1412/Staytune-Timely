@@ -46,7 +46,7 @@ The app is available through Google Play Soon.. \
 
 ### Spotify Playing 🎧
 
-[![spotify-github-profile](https://spotify-github-profile.vercel.app/api/view.svg?uid=31i7wanbyvrpbkgyrassjmkucrim&redirect=true)](https://spotify-github-profile.vercel.app/api/view.svg?uid=31i7wanbyvrpbkgyrassjmkucrim&cover_image=true&theme=novatorem&show_offline=false&bar_color=53b14f&bar_color_cover=false) 
+[![spotify-github-profile](https://spotify-github-profile.vercel.app/api/view.svg?uid=31i7wanbyvrpbkgyrassjmkucrim&cover_image=true&theme=novatorem&show_offline=false&bar_color=53b14f&bar_color_cover=false)](https://spotify-github-profile.vercel.app/api/view.svg?uid=31i7wanbyvrpbkgyrassjmkucrim&redirect=true) 
 
 
 
